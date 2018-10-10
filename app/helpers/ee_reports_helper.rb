@@ -1,0 +1,2 @@
+module EeReportsHelper
+end

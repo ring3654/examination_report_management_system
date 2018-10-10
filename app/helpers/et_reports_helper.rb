@@ -1,0 +1,2 @@
+module EtReportsHelper
+end

@@ -1,0 +1,2 @@
+class EtReport < ApplicationRecord
+end

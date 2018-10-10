@@ -1,0 +1,2 @@
+class EeReport < ApplicationRecord
+end

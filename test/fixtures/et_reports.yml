@@ -1,0 +1,87 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reporting_date: 2018-10-10 11:19:43
+  student_class: 1
+  student_number: 1
+  student_id: 1
+  job_category: MyString
+  office_name: MyString
+  job_vote_number: 1
+  introduction_number: 1
+  test_day: 2018-10-10 11:19:43
+  postal_code: 1
+  street_address: MyString
+  examination_hall: MyString
+  examinees_count_man: 1
+  examinees_count_woman: 1
+  selection_method: 1
+  s_method_writing: false
+  s_method_appropriate: false
+  s_method_interview: false
+  s_method_composition: false
+  s_method_physical: false
+  s_method_other: false
+  t_subject_japanese: 1
+  t_subject_math: 1
+  t_subject_society: 1
+  t_subject_science: 1
+  t_subject_english: 1
+  t_subject_other_name: MyString
+  t_subject_other_time: 1
+  t_subject_general: 1
+  t_subject_aptitude: 1
+  i_method_one: 1
+  i_method_count: 1
+  judge_count: 1
+  i_time: 1
+  i_other: MyString
+  i_contents: MyText
+  i_image: MyString
+  composition_title: MyString
+  c_sheet_count: 1
+  writing_test_contents: MyText
+  other_coment: MyText
+
+two:
+  reporting_date: 2018-10-10 11:19:43
+  student_class: 1
+  student_number: 1
+  student_id: 1
+  job_category: MyString
+  office_name: MyString
+  job_vote_number: 1
+  introduction_number: 1
+  test_day: 2018-10-10 11:19:43
+  postal_code: 1
+  street_address: MyString
+  examination_hall: MyString
+  examinees_count_man: 1
+  examinees_count_woman: 1
+  selection_method: 1
+  s_method_writing: false
+  s_method_appropriate: false
+  s_method_interview: false
+  s_method_composition: false
+  s_method_physical: false
+  s_method_other: false
+  t_subject_japanese: 1
+  t_subject_math: 1
+  t_subject_society: 1
+  t_subject_science: 1
+  t_subject_english: 1
+  t_subject_other_name: MyString
+  t_subject_other_time: 1
+  t_subject_general: 1
+  t_subject_aptitude: 1
+  i_method_one: 1
+  i_method_count: 1
+  judge_count: 1
+  i_time: 1
+  i_other: MyString
+  i_contents: MyText
+  i_image: MyString
+  composition_title: MyString
+  c_sheet_count: 1
+  writing_test_contents: MyText
+  other_coment: MyText

@@ -1,0 +1,222 @@
+<%= form_with(model: et_report, local: true) do |form| %>
+  <% if et_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(et_report.errors.count, "error") %> prohibited this et_report from being saved:</h2>
+
+      <ul>
+      <% et_report.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :reporting_date %>
+    <%= form.datetime_select :reporting_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_class %>
+    <%= form.number_field :student_class %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_number %>
+    <%= form.number_field :student_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_id %>
+    <%= form.number_field :student_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job_category %>
+    <%= form.text_field :job_category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :office_name %>
+    <%= form.text_field :office_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job_vote_number %>
+    <%= form.number_field :job_vote_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :introduction_number %>
+    <%= form.number_field :introduction_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test_day %>
+    <%= form.datetime_select :test_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postal_code %>
+    <%= form.number_field :postal_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street_address %>
+    <%= form.text_field :street_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :examination_hall %>
+    <%= form.text_field :examination_hall %>
+  </div>
+
+  <div class="field">
+    <%= form.label :examinees_count_man %>
+    <%= form.number_field :examinees_count_man %>
+  </div>
+
+  <div class="field">
+    <%= form.label :examinees_count_woman %>
+    <%= form.number_field :examinees_count_woman %>
+  </div>
+
+  <div class="field">
+    <%= form.label :selection_method %>
+    <%= form.number_field :selection_method %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_method_writing %>
+    <%= form.check_box :s_method_writing %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_method_appropriate %>
+    <%= form.check_box :s_method_appropriate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_method_interview %>
+    <%= form.check_box :s_method_interview %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_method_composition %>
+    <%= form.check_box :s_method_composition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_method_physical %>
+    <%= form.check_box :s_method_physical %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_method_other %>
+    <%= form.check_box :s_method_other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_japanese %>
+    <%= form.number_field :t_subject_japanese %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_math %>
+    <%= form.number_field :t_subject_math %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_society %>
+    <%= form.number_field :t_subject_society %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_science %>
+    <%= form.number_field :t_subject_science %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_english %>
+    <%= form.number_field :t_subject_english %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_other_name %>
+    <%= form.text_field :t_subject_other_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_other_time %>
+    <%= form.number_field :t_subject_other_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_general %>
+    <%= form.number_field :t_subject_general %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_aptitude %>
+    <%= form.number_field :t_subject_aptitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :i_method_one %>
+    <%= form.number_field :i_method_one %>
+  </div>
+
+  <div class="field">
+    <%= form.label :i_method_count %>
+    <%= form.number_field :i_method_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :judge_count %>
+    <%= form.number_field :judge_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :i_time %>
+    <%= form.number_field :i_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :i_other %>
+    <%= form.text_field :i_other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :i_contents %>
+    <%= form.text_area :i_contents %>
+  </div>
+
+  <div class="field">
+    <%= form.label :i_image %>
+    <%= form.text_field :i_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :composition_title %>
+    <%= form.text_field :composition_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :c_sheet_count %>
+    <%= form.number_field :c_sheet_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :writing_test_contents %>
+    <%= form.text_area :writing_test_contents %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_coment %>
+    <%= form.text_area :other_coment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
