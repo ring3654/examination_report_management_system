@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ee Reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reporting date</th>
+      <th>Student class</th>
+      <th>Student number</th>
+      <th>Student</th>
+      <th>School name</th>
+      <th>S faculty name</th>
+      <th>S department name</th>
+      <th>S course name</th>
+      <th>Test day</th>
+      <th>Postal code</th>
+      <th>Street address</th>
+      <th>Examination hall</th>
+      <th>Result publication date</th>
+      <th>Entrance form</th>
+      <th>R special</th>
+      <th>R designation</th>
+      <th>R ao</th>
+      <th>R general</th>
+      <th>R sports</th>
+      <th>R self</th>
+      <th>R others</th>
+      <th>T subject japanese</th>
+      <th>T subject math</th>
+      <th>T subject society</th>
+      <th>T subject science</th>
+      <th>T subject english</th>
+      <th>T subject other</th>
+      <th>T subject other time</th>
+      <th>G q contents</th>
+      <th>G q image</th>
+      <th>G impressions</th>
+      <th>Recommended form</th>
+      <th>I q contents</th>
+      <th>I q images</th>
+      <th>E contents</th>
+      <th>W contents</th>
+      <th>R impression</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ee_reports.each do |ee_report| %>
+      <tr>
+        <td><%= ee_report.reporting_date %></td>
+        <td><%= ee_report.student_class %></td>
+        <td><%= ee_report.student_number %></td>
+        <td><%= ee_report.student_id %></td>
+        <td><%= ee_report.school_name %></td>
+        <td><%= ee_report.s_faculty_name %></td>
+        <td><%= ee_report.s_department_name %></td>
+        <td><%= ee_report.s_course_name %></td>
+        <td><%= ee_report.test_day %></td>
+        <td><%= ee_report.postal_code %></td>
+        <td><%= ee_report.street_address %></td>
+        <td><%= ee_report.examination_hall %></td>
+        <td><%= ee_report.result_publication_date %></td>
+        <td><%= ee_report.entrance_form %></td>
+        <td><%= ee_report.r_special %></td>
+        <td><%= ee_report.r_designation %></td>
+        <td><%= ee_report.r_ao %></td>
+        <td><%= ee_report.r_general %></td>
+        <td><%= ee_report.r_sports %></td>
+        <td><%= ee_report.r_self %></td>
+        <td><%= ee_report.r_others %></td>
+        <td><%= ee_report.t_subject_japanese %></td>
+        <td><%= ee_report.t_subject_math %></td>
+        <td><%= ee_report.t_subject_society %></td>
+        <td><%= ee_report.t_subject_science %></td>
+        <td><%= ee_report.t_subject_english %></td>
+        <td><%= ee_report.t_subject_other %></td>
+        <td><%= ee_report.t_subject_other_time %></td>
+        <td><%= ee_report.g_q_contents %></td>
+        <td><%= ee_report.g_q_image %></td>
+        <td><%= ee_report.g_impressions %></td>
+        <td><%= ee_report.recommended_form %></td>
+        <td><%= ee_report.i_q_contents %></td>
+        <td><%= ee_report.i_q_images %></td>
+        <td><%= ee_report.e_contents %></td>
+        <td><%= ee_report.w_contents %></td>
+        <td><%= ee_report.r_impression %></td>
+        <td><%= link_to 'Show', ee_report %></td>
+        <td><%= link_to 'Edit', edit_ee_report_path(ee_report) %></td>
+        <td><%= link_to 'Destroy', ee_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ee Report', new_ee_report_path %>

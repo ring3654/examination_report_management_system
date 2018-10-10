@@ -1,0 +1,202 @@
+<%= form_with(model: ee_report, local: true) do |form| %>
+  <% if ee_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ee_report.errors.count, "error") %> prohibited this ee_report from being saved:</h2>
+
+      <ul>
+      <% ee_report.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :reporting_date %>
+    <%= form.datetime_select :reporting_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_class %>
+    <%= form.number_field :student_class %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_number %>
+    <%= form.number_field :student_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_id %>
+    <%= form.number_field :student_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school_name %>
+    <%= form.text_field :school_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_faculty_name %>
+    <%= form.text_field :s_faculty_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_department_name %>
+    <%= form.text_field :s_department_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :s_course_name %>
+    <%= form.text_field :s_course_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :test_day %>
+    <%= form.datetime_select :test_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postal_code %>
+    <%= form.number_field :postal_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street_address %>
+    <%= form.text_field :street_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :examination_hall %>
+    <%= form.text_field :examination_hall %>
+  </div>
+
+  <div class="field">
+    <%= form.label :result_publication_date %>
+    <%= form.date_select :result_publication_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :entrance_form %>
+    <%= form.number_field :entrance_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :r_special %>
+    <%= form.check_box :r_special %>
+  </div>
+
+  <div class="field">
+    <%= form.label :r_designation %>
+    <%= form.check_box :r_designation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :r_ao %>
+    <%= form.check_box :r_ao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :r_general %>
+    <%= form.check_box :r_general %>
+  </div>
+
+  <div class="field">
+    <%= form.label :r_sports %>
+    <%= form.check_box :r_sports %>
+  </div>
+
+  <div class="field">
+    <%= form.label :r_self %>
+    <%= form.check_box :r_self %>
+  </div>
+
+  <div class="field">
+    <%= form.label :r_others %>
+    <%= form.check_box :r_others %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_japanese %>
+    <%= form.number_field :t_subject_japanese %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_math %>
+    <%= form.number_field :t_subject_math %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_society %>
+    <%= form.number_field :t_subject_society %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_science %>
+    <%= form.number_field :t_subject_science %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_english %>
+    <%= form.number_field :t_subject_english %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_other %>
+    <%= form.text_field :t_subject_other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :t_subject_other_time %>
+    <%= form.number_field :t_subject_other_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :g_q_contents %>
+    <%= form.text_area :g_q_contents %>
+  </div>
+
+  <div class="field">
+    <%= form.label :g_q_image %>
+    <%= form.text_field :g_q_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :g_impressions %>
+    <%= form.text_area :g_impressions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recommended_form %>
+    <%= form.number_field :recommended_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :i_q_contents %>
+    <%= form.text_area :i_q_contents %>
+  </div>
+
+  <div class="field">
+    <%= form.label :i_q_images %>
+    <%= form.text_field :i_q_images %>
+  </div>
+
+  <div class="field">
+    <%= form.label :e_contents %>
+    <%= form.text_area :e_contents %>
+  </div>
+
+  <div class="field">
+    <%= form.label :w_contents %>
+    <%= form.text_area :w_contents %>
+  </div>
+
+  <div class="field">
+    <%= form.label :r_impression %>
+    <%= form.text_area :r_impression %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

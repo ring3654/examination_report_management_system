@@ -1,0 +1,79 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reporting_date: 2018-10-10 11:18:01
+  student_class: 1
+  student_number: 1
+  student_id: 1
+  school_name: MyString
+  s_faculty_name: MyString
+  s_department_name: MyString
+  s_course_name: MyString
+  test_day: 2018-10-10 11:18:01
+  postal_code: 1
+  street_address: MyString
+  examination_hall: MyString
+  result_publication_date: 2018-10-10
+  entrance_form: 1
+  r_special: false
+  r_designation: false
+  r_ao: false
+  r_general: false
+  r_sports: false
+  r_self: false
+  r_others: false
+  t_subject_japanese: 1
+  t_subject_math: 1
+  t_subject_society: 1
+  t_subject_science: 1
+  t_subject_english: 1
+  t_subject_other: MyString
+  t_subject_other_time: 1
+  g_q_contents: MyText
+  g_q_image: MyString
+  g_impressions: MyText
+  recommended_form: 1
+  i_q_contents: MyText
+  i_q_images: MyString
+  e_contents: MyText
+  w_contents: MyText
+  r_impression: MyText
+
+two:
+  reporting_date: 2018-10-10 11:18:01
+  student_class: 1
+  student_number: 1
+  student_id: 1
+  school_name: MyString
+  s_faculty_name: MyString
+  s_department_name: MyString
+  s_course_name: MyString
+  test_day: 2018-10-10 11:18:01
+  postal_code: 1
+  street_address: MyString
+  examination_hall: MyString
+  result_publication_date: 2018-10-10
+  entrance_form: 1
+  r_special: false
+  r_designation: false
+  r_ao: false
+  r_general: false
+  r_sports: false
+  r_self: false
+  r_others: false
+  t_subject_japanese: 1
+  t_subject_math: 1
+  t_subject_society: 1
+  t_subject_science: 1
+  t_subject_english: 1
+  t_subject_other: MyString
+  t_subject_other_time: 1
+  g_q_contents: MyText
+  g_q_image: MyString
+  g_impressions: MyText
+  recommended_form: 1
+  i_q_contents: MyText
+  i_q_images: MyString
+  e_contents: MyText
+  w_contents: MyText
+  r_impression: MyText
