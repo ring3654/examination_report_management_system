@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.order(:user_id)
   end
 
   # GET /users/1
@@ -61,6 +61,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = User.all.order(:user_id)
+    if params[:search][:annual].present?
+      @users = @users.where("annual like '%" + params[:search][:annual] + "%' ").order(:user_id)      
+    end
+    if params[:search][:name].present?
+      @users = @users.where("name like '%" + params[:search][:name] + "%' ").order(:user_id)
+  end
+    render :index
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -71,4 +83,11 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:user_id, :name, :pass, :flg, :annual, :authority)
     end
+
+
+       
+
+
+
+
 end

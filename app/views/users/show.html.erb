@@ -1,34 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザーid:</strong>
   <%= @user.user_id %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>氏名:</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Pass:</strong>
+  <strong>パスワード:</strong>
   <%= @user.pass %>
 </p>
 
 <p>
-  <strong>Flg:</strong>
+  <strong>削除フラグ:</strong>
   <%= @user.flg %>
 </p>
 
 <p>
-  <strong>Annual:</strong>
+  <strong>年度:</strong>
   <%= @user.annual %>
 </p>
 
 <p>
-  <strong>Authority:</strong>
+  <strong>権限:</strong>
   <%= @user.authority %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to '編集', edit_user_path(@user) %> |
+<%= link_to '戻る', users_path %>
