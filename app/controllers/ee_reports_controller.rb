@@ -25,6 +25,7 @@ class EeReportsController < ApplicationController
   # POST /ee_reports.json
   def create
     @ee_report = EeReport.new(ee_report_params)
+    
 
     respond_to do |format|
       if @ee_report.save
