@@ -12,207 +12,230 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :reporting_date %>
-    <%= form.datetime_select :reporting_date %>
+    <%= form.label :報告年月日 %>
+    <%= form.date_select :reporting_date %>
   </div>
 
+  <div style="display:inline-flex">
   <div class="field">
-    <%= form.label :student_class %>
+    <%= form.label :組 %>
     <%= form.number_field :student_class %>
   </div>
 
   <div class="field">
-    <%= form.label :student_number %>
+    <%= form.label :番号 %>
     <%= form.number_field :student_number %>
   </div>
 
   <div class="field">
-    <%= form.label :student_id %>
+    <%= form.label :受験者ID %>
     <%= form.number_field :student_id %>
   </div>
+  </div>
 
+  <div style="display:inline-flex">
   <div class="field">
-    <%= form.label :job_category %>
+    <%= form.label :職種 %>
     <%= form.text_field :job_category %>
   </div>
 
   <div class="field">
-    <%= form.label :office_name %>
+    <%= form.label :事業所名 %>
     <%= form.text_field :office_name %>
   </div>
+  </div>
 
+  <br>
+  <div style="display:inline-flex">
   <div class="field">
-    <%= form.label :job_vote_number %>
+    <%= form.label :求人票受付番号 %>
     <%= form.number_field :job_vote_number %>
   </div>
 
-  <div class="field">
-    <%= form.label :introduction_number %>
-    <%= form.number_field :introduction_number %>
-  </div>
+  <label style="margin-top: 18px;">
+    <%= form.radio_button :introduction_number,"学校斡旋" %>学校斡旋
+  </label>
+  <label style="margin-top: 18px;">
+    <%= form.radio_button :introduction_number,"縁故" %>縁故
+  </label>
+    </div>
+    </br>
 
   <div class="field">
-    <%= form.label :test_day %>
-    <%= form.datetime_select :test_day %>
+    <%= form.label :試験日 %>
+    <%= form.date_select :test_day %>
   </div>
 
+  <div style="display:inline-flex">
   <div class="field">
-    <%= form.label :postal_code %>
+    <%= form.label :郵便番号 %>
     <%= form.number_field :postal_code %>
   </div>
 
   <div class="field">
-    <%= form.label :street_address %>
+    <%= form.label :所在地 %>
     <%= form.text_field :street_address %>
   </div>
+  </div>
 
+  <div style="display:inline-flex">
   <div class="field">
-    <%= form.label :examination_hall %>
+    <%= form.label :試験会場 %>
     <%= form.text_field :examination_hall %>
   </div>
 
+  <%= form.label :受験者数 %>
   <div class="field">
-    <%= form.label :examinees_count_man %>
+    <%= form.label :男性受験者数 %>
     <%= form.number_field :examinees_count_man %>
   </div>
 
   <div class="field">
-    <%= form.label :examinees_count_woman %>
+    <%= form.label :女性受験者数 %>
     <%= form.number_field :examinees_count_woman %>
   </div>
-
-  <div class="field">
-    <%= form.label :selection_method %>
-    <%= form.number_field :selection_method %>
   </div>
 
+  <%= form.label :選考方法 %>
+  <label style="margin-top: 0px;">
+  <%= form.radio_button :selection_method,"一次" %>一次
+</label>
+<label style="margin-top: 0px;">
+  <%= form.radio_button :selection_method,"二次" %>二次
+</label>
+
+  <div style="display:inline-flex">
   <div class="field">
-    <%= form.label :s_method_writing %>
+    <%= form.label :筆記 %>
     <%= form.check_box :s_method_writing %>
   </div>
 
   <div class="field">
-    <%= form.label :s_method_appropriate %>
+    <%= form.label :適正 %>
     <%= form.check_box :s_method_appropriate %>
   </div>
 
   <div class="field">
-    <%= form.label :s_method_interview %>
+    <%= form.label :面接 %>
     <%= form.check_box :s_method_interview %>
   </div>
 
   <div class="field">
-    <%= form.label :s_method_composition %>
+    <%= form.label :作文 %>
     <%= form.check_box :s_method_composition %>
   </div>
 
   <div class="field">
-    <%= form.label :s_method_physical %>
+    <%= form.label :身体 %>
     <%= form.check_box :s_method_physical %>
   </div>
 
   <div class="field">
-    <%= form.label :s_method_other %>
+    <%= form.label :その他 %>
     <%= form.check_box :s_method_other %>
   </div>
+  </div>
 
+  <%= form.label :試験科目 %>
+  <div style="display:inline-flex">
   <div class="field">
-    <%= form.label :t_subject_japanese %>
-    <%= form.number_field :t_subject_japanese %>
+    <%= form.label :国語 %>
+    <%= form.number_field :t_subject_japanese %>分
   </div>
 
   <div class="field">
-    <%= form.label :t_subject_math %>
-    <%= form.number_field :t_subject_math %>
+    <%= form.label :数学 %>
+    <%= form.number_field :t_subject_math %>分
   </div>
 
   <div class="field">
-    <%= form.label :t_subject_society %>
-    <%= form.number_field :t_subject_society %>
+    <%= form.label :社会 %>
+    <%= form.number_field :t_subject_society %>分
   </div>
 
   <div class="field">
-    <%= form.label :t_subject_science %>
-    <%= form.number_field :t_subject_science %>
+    <%= form.label :理科 %>
+    <%= form.number_field :t_subject_science %>分
   </div>
 
   <div class="field">
-    <%= form.label :t_subject_english %>
-    <%= form.number_field :t_subject_english %>
+    <%= form.label :英語 %>
+    <%= form.number_field :t_subject_english %>分
   </div>
 
   <div class="field">
-    <%= form.label :t_subject_other_name %>
-    <%= form.text_field :t_subject_other_name %>
+    <%= form.label :その他 %>
+    <%= form.text_field :t_subject_other_name %>分
+  </div>
   </div>
 
   <div class="field">
-    <%= form.label :t_subject_other_time %>
+    <%= form.label :試験時間（その他の時間） %>
     <%= form.number_field :t_subject_other_time %>
   </div>
 
   <div class="field">
-    <%= form.label :t_subject_general %>
+    <%= form.label :試験時間（一般常識） %>
     <%= form.number_field :t_subject_general %>
   </div>
 
   <div class="field">
-    <%= form.label :t_subject_aptitude %>
+    <%= form.label :試験時間（適正） %>
     <%= form.number_field :t_subject_aptitude %>
   </div>
 
   <div class="field">
-    <%= form.label :i_method_one %>
+    <%= form.label :面接方法%>
     <%= form.number_field :i_method_one %>
   </div>
 
   <div class="field">
-    <%= form.label :i_method_count %>
+    <%= form.label :面接方法（人数） %>
     <%= form.number_field :i_method_count %>
   </div>
 
   <div class="field">
-    <%= form.label :judge_count %>
+    <%= form.label :面接委員数 %>
     <%= form.number_field :judge_count %>
   </div>
 
   <div class="field">
-    <%= form.label :i_time %>
+    <%= form.label :面接時間 %>
     <%= form.number_field :i_time %>
   </div>
 
   <div class="field">
-    <%= form.label :i_other %>
+    <%= form.label :その他（面接）%>
     <%= form.text_field :i_other %>
   </div>
 
   <div class="field">
-    <%= form.label :i_contents %>
+    <%= form.label :面接内容 %>
     <%= form.text_area :i_contents %>
   </div>
 
   <div class="field">
-    <%= form.label :i_image %>
+    <%= form.label :面接画像 %>
     <%= form.text_field :i_image %>
   </div>
 
   <div class="field">
-    <%= form.label :composition_title %>
+    <%= form.label :作文（内容） %>
     <%= form.text_field :composition_title %>
   </div>
 
   <div class="field">
-    <%= form.label :c_sheet_count %>
+    <%= form.label :用紙数 %>
     <%= form.number_field :c_sheet_count %>
   </div>
 
   <div class="field">
-    <%= form.label :writing_test_contents %>
+    <%= form.label :筆記試験内容 %>
     <%= form.text_area :writing_test_contents %>
   </div>
 
   <div class="field">
-    <%= form.label :other_coment %>
+    <%= form.label :参考になること記入 %>
     <%= form.text_area :other_coment %>
   </div>
 
