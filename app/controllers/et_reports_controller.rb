@@ -25,7 +25,13 @@ class EtReportsController < ApplicationController
   # POST /et_reports.json
   def create
     @et_report = EtReport.new(et_report_params)
-
+ if params[:et_report][:i_image].present?
+    @et_report.i_image = params[:et_report][:i_image].original_filename
+    
+    File.open("public/images/#{@et_report.i_image}",'w+b') { |f|
+     f.write(params[:et_report][:i_image].read)}
+ end
+            
     respond_to do |format|
       if @et_report.save
         format.html { redirect_to @et_report, notice: 'Et report was successfully created.' }
@@ -36,6 +42,9 @@ class EtReportsController < ApplicationController
       end
     end
   end
+
+
+
 
   # PATCH/PUT /et_reports/1
   # PATCH/PUT /et_reports/1.json
