@@ -1,47 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ee Reports</h1>
+<h1>入学受験報告書</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Reporting date</th>
-      <th>Student class</th>
-      <th>Student number</th>
-      <th>Student</th>
-      <th>School name</th>
-      <th>S faculty name</th>
-      <th>S department name</th>
-      <th>S course name</th>
-      <th>Test day</th>
-      <th>Postal code</th>
-      <th>Street address</th>
-      <th>Examination hall</th>
-      <th>Result publication date</th>
-      <th>Entrance form</th>
-      <th>R special</th>
-      <th>R designation</th>
-      <th>R ao</th>
-      <th>R general</th>
-      <th>R sports</th>
-      <th>R self</th>
-      <th>R others</th>
-      <th>T subject japanese</th>
-      <th>T subject math</th>
-      <th>T subject society</th>
-      <th>T subject science</th>
-      <th>T subject english</th>
-      <th>T subject other</th>
-      <th>T subject other time</th>
-      <th>G q contents</th>
-      <th>G q image</th>
-      <th>G impressions</th>
-      <th>Recommended form</th>
-      <th>I q contents</th>
-      <th>I q images</th>
-      <th>E contents</th>
-      <th>W contents</th>
-      <th>R impression</th>
+      <th>報告年月日</th>
+      <th>組</th>
+      <th>番号</th>
+      <th>受験者ID</th>
+      <th>学校名</th>
+      <th>学部名</th>
+      <th>学科名</th>
+      <th>コース名</th>
+      <th>試験日</th>
+      <th>郵便番号</th>
+      <th>所在地</th>
+      <th>試験会場</th>
+      <th>合格発表日</th>
+      <th>入試形態</th>
+      <th>特別推薦</th>
+      <th>指定校推薦</th>
+      <th>AO推薦</th>
+      <th>一般推薦</th>
+      <th>スポーツ推薦</th>
+      <th>自己推薦</th>
+      <th>その他の推薦</th>
+      <th>試験時間（国語）</th>
+      <th>試験時間（数学）</th>
+      <th>試験時間（社会）</th>
+      <th>試験時間（理科）</th>
+      <th>試験時間（英語）</th>
+      <th>試験科目（その他）</th>
+      <th>試験時間（その他）</th>
+      <th>問題の内容</th>
+      <th>問題画像</th>
+      <th>感想（一般）</th>
+      <th>推薦形態</th>
+      <th>面接内容</th>
+      <th>面接画像</th>
+      <th>小論文の内容</th>
+      <th>筆記の内容</th>
+      <th>感想（推薦）</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -86,9 +86,9 @@
         <td><%= ee_report.e_contents %></td>
         <td><%= ee_report.w_contents %></td>
         <td><%= ee_report.r_impression %></td>
-        <td><%= link_to 'Show', ee_report %></td>
-        <td><%= link_to 'Edit', edit_ee_report_path(ee_report) %></td>
-        <td><%= link_to 'Destroy', ee_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '閲覧', ee_report %></td>
+        <td><%= link_to '編集', edit_ee_report_path(ee_report) %></td>
+        <td><%= link_to '削除', ee_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

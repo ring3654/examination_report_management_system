@@ -12,36 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :ユーザーid %>
     <%= form.text_field :user_id %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :氏名 %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :pass %>
+    <%= form.label :パスワード %>
     <%= form.text_field :pass %>
   </div>
 
   <div class="field">
-    <%= form.label :flg %>
-    <%= form.number_field :flg %>
+    <%= form.label :削除フラグ %>
   </div>
+    <label>
+    <%= form.radio_button :flg, "0" %> 残す </label><label><%= form.radio_button :flg, "1" %> 削除 </label>
+
 
   <div class="field">
-    <%= form.label :annual %>
+    <%= form.label :年度 %>
     <%= form.number_field :annual %>
   </div>
 
   <div class="field">
-    <%= form.label :authority %>
-    <%= form.number_field :authority %>
+    <%= form.label :権限 %>
   </div>
+  <label><%= form.radio_button :authority, "0" %> 教員</label>
+  <label><%= form.radio_button :authority, "1" %> 生徒</label>
+  <label><%= form.radio_button :authority, "2" %> 閲覧のみ</label>
+  
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :登録%>
   </div>
 <% end %>

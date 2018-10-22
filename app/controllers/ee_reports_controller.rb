@@ -25,7 +25,18 @@ class EeReportsController < ApplicationController
   # POST /ee_reports.json
   def create
     @ee_report = EeReport.new(ee_report_params)
+    
+    if params[:ee_report][:g_q_image].present?
+      @ee_report.g_q_image = params[:ee_report][:g_q_image].original_filename
+  
+      File.open("public/images/#{@ee_report.g_q_image}",'wb') { |f|f.write(params[:ee_report][:g_q_image].read)}
+    end  
 
+  if params[:ee_report][:i_q_images].present?
+    @ee_report.i_q_images = params[:ee_report][:i_q_images].original_filename
+
+    File.open("public/images/#{@ee_report.i_q_images}",'wb') { |f|f.write(params[:ee_report][:i_q_images].read)}
+  end
     respond_to do |format|
       if @ee_report.save
         format.html { redirect_to @ee_report, notice: 'Ee report was successfully created.' }
