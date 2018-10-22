@@ -19,52 +19,53 @@
   <div style="display:inline-flex">
   <div style="margin-right:20px;">
   <div class="field">
-    <%= form.label :組 %>
-    <%= form.number_field :student_class %>
+   3年 <%= form.number_field :student_class %>組
   </div>
   </div>
 
   <div style="margin-right:20px;">
   <div class="field">
-    <%= form.label :番号 %>
-    <%= form.number_field :student_number %>
+    <%= form.number_field :student_number %>番
   </div>
   </div>
 
   <div style="margin-right:20px;">
   <div class="field">
-    <%= form.label :受験者ID %>
-    <%= form.number_field :student_id %>
+  受験者ID<%= form.number_field :student_id %>
   </div>
   </div>
   </div>
 
+  <div style="margin-top:10px;">
   <div style="margin-right:20px;">
   <div class="field">
-    <%= form.label :学校名 %>
-    <%= form.text_field :school_name %>
+  学校名<%= form.text_field :school_name %>
+  </div>
   </div>
   </div>
 
   <div style="display:inline-flex">
+  <div style="margin-top:10px;">
   <div style="margin-right:20px;">
   <div class="field">
-    <%= form.label :学部名 %>
-    <%= form.text_field :s_faculty_name %>
+  学部名 <%= form.text_field :s_faculty_name %>
+  </div>
   </div>
   </div>
 
+  <div style="margin-top:10px;">
   <div style="margin-right:20px;">
   <div class="field">
-    <%= form.label :学科名 %>
-    <%= form.text_field :s_department_name %>
+  学科名<%= form.text_field :s_department_name %>
+  </div>
   </div>
   </div>
 
+  <div style="margin-top:10px;">
   <div style="margin-right:20px;">
   <div class="field">
-    <%= form.label :コース名 %>
-    <%= form.text_field :s_course_name %>
+  コース名<%= form.text_field :s_course_name %>
+  </div>
   </div>
   </div>
   </div>
@@ -219,7 +220,7 @@
   <div style="margin-left:350px;">
   <div class="field">
     <%= form.label :面接画像の添付 %>
-    <%= form.text_field :i_q_images %>
+    <%= form.file_field :i_q_images %>
   </div>
   </div>
 

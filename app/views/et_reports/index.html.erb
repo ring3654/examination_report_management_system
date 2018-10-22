@@ -92,9 +92,9 @@
         <td><%= et_report.c_sheet_count %></td>
         <td><%= et_report.writing_test_contents %></td>
         <td><%= et_report.other_coment %></td>
-        <td><%= link_to 'Show', et_report %></td>
-        <td><%= link_to 'Edit', edit_et_report_path(et_report) %></td>
-        <td><%= link_to 'Destroy', et_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '閲覧', et_report %></td>
+        <td><%= link_to '編集', edit_et_report_path(et_report) %></td>
+        <td><%= link_to '削除', et_report, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>
