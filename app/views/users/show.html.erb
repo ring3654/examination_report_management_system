@@ -14,17 +14,3 @@
   <strong>パスワード:</strong>
   <%= @user.pass %>
 </p>
-
-<p>
-  <strong>削除フラグ:</strong>
-  <%= @user.flg %>
-</p>
-
-<p>
-  <%= @user.annual %>
-  <strong>権限:</strong>
-  <%= @user.authority %>
-</p>
-
-<%= link_to '編集', edit_user_path(@user) %> |
-<%= link_to '戻る', users_path %>

@@ -23,17 +23,13 @@
 
   <div class="field">
     <%= form.label :パスワード %>
-    <%= form.text_field :pass %>
+    <%= form.password_field :pass %>
   </div>
 
-  <div class="field">
-    <%= form.label :削除フラグ %>
-  </div>
-    <label>
-    <%= form.radio_button :flg, "0" %> 残す </label><label><%= form.radio_button :flg, "1" %> 削除 </label>
+    <%= form.hidden_field :flg, :value => "0" %>
 
 
-  <div class="field">
+    <div class="field">
     <%= form.label :年度 %>
     <%= form.number_field :annual %>
   </div>
@@ -50,3 +46,5 @@
     <%= form.submit :登録%>
   </div>
 <% end %>
+
+

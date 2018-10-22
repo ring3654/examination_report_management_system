@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'et_report_searchs/index'
+  get 'et_report_searchs/show'
+  get 'ee_report_searchs/index'
+  get 'ee_report_searchs/show'
+  get 'home/retrieval_top'
   post '/users_search', to: 'users#search' 
   get 'home/report_top'
   get 'home/top'
