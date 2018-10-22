@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_022028) do
+ActiveRecord::Schema.define(version: 2018_10_22_012147) do
 
   create_table "ee_reports", force: :cascade do |t|
     t.datetime "reporting_date"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_10_10_022028) do
     t.text "r_impression"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "approval_flg"
   end
 
   create_table "et_reports", force: :cascade do |t|
@@ -98,6 +99,7 @@ ActiveRecord::Schema.define(version: 2018_10_10_022028) do
     t.text "other_coment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "approval_flg"
   end
 
   create_table "users", force: :cascade do |t|

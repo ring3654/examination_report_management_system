@@ -1,2 +1,29 @@
-<h1>EeReportSearchs#index</h1>
-<p>Find me in app/views/ee_report_searchs/index.html.erb</p>
+
+<h1>入学受験報告書 (検索)</h1>
+
+<table border="1" cellspacing="0" bordercolor="#000000">
+  <thead>
+    <tr>
+      <th>県名</th>
+      <th>学校名</th>
+      <th>学部名</th>
+      <th>入試形態</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ee_reports.each do |ee_report| %>
+      <tr>
+        <td><%= ee_report.street_address.match(/.*[都道府県]/) %></td>
+        <td><%= ee_report.school_name %></td>
+        <td><%= ee_report.s_faculty_name %></td>
+        <td><%= ee_report.entrance_form %></td>
+        <td><%= link_to '詳細', ee_report_searchs_show_path %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '戻る', home_retrieval_top_path %>
