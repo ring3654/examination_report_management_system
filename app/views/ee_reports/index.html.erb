@@ -86,9 +86,9 @@
         <td><%= ee_report.e_contents %></td>
         <td><%= ee_report.w_contents %></td>
         <td><%= ee_report.r_impression %></td>
-        <td><%= link_to 'Show', ee_report %></td>
-        <td><%= link_to 'Edit', edit_ee_report_path(ee_report) %></td>
-        <td><%= link_to 'Destroy', ee_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '閲覧', ee_report %></td>
+        <td><%= link_to '編集', edit_ee_report_path(ee_report) %></td>
+        <td><%= link_to '削除', ee_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
