@@ -1,6 +1,30 @@
 
 <h1>就職試験受験報告書 (検索)</h1>
 
+<%= form_tag('/et_searchs') do %>
+  <p>
+  事業所名
+  <br>
+  <%= text_field_tag 'search[office_name]' %>
+  </p>
+  <p>
+  職種
+  <br>
+  <%= text_field_tag 'search[job_category]' %>
+  </p>
+  <p>
+  求人票受付番号
+  <br>
+  <%= text_field_tag 'search[job_vote_number]' %>
+  </p>
+  <p>
+  所在地
+  <br>
+  <%= text_field_tag 'search[street_address]' %>
+  </p>
+  <%= submit_tag '検索' %>
+  <% end %>
+ 
 <table border="1" cellspacing="0" bordercolor="#000000">
   <thead>
     <tr>
