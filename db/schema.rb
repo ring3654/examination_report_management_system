@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_012147) do
+ActiveRecord::Schema.define(version: 2018_10_23_014212) do
 
   create_table "ee_reports", force: :cascade do |t|
     t.datetime "reporting_date"
@@ -105,12 +105,13 @@ ActiveRecord::Schema.define(version: 2018_10_22_012147) do
   create_table "users", force: :cascade do |t|
     t.string "user_id"
     t.string "name"
-    t.string "pass"
+    t.string "password"
     t.integer "flg"
     t.integer "annual"
     t.integer "authority"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

@@ -1,0 +1,23 @@
+<h1>ログイン</h1>
+
+
+<% if flash[:error] %>
+    <p style="color: red;">
+      <%= flash[:error] %>
+    </p>
+<% end %>
+
+<div class="row">
+  <div>
+    <%= form_tag(action: :check) do %>
+
+      <%= label_tag :ユーザID %>
+      <%= text_field_tag "user_id", "", id: "user_id" %>
+
+      <%= label_tag :パスワード %>
+      <%= password_field_tag "password", "", id: "password" %>
+
+      <%= submit_tag "ログイン" %>
+    <% end %>
+  </div>
+</div>

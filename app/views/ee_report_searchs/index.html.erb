@@ -1,6 +1,25 @@
 
 <h1>入学受験報告書 (検索)</h1>
 
+<%= form_tag('/ee_searchs') do %>
+  <p>
+  学校名
+  <br>
+  <%= text_field_tag 'search[school_name]' %>
+  </p>
+  <p>
+  学部
+  <br>
+  <%= text_field_tag 'search[s_faculty_name]' %>
+  </p>
+  <p>
+  所在地
+  <br>
+  <%= text_field_tag 'search[street_address]' %>
+  </p>
+  <%= submit_tag '検索' %>
+  <% end %>
+
 <table border="1" cellspacing="0" bordercolor="#000000">
   <thead>
     <tr>
