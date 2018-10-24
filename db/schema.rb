@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_012147) do
+ActiveRecord::Schema.define(version: 2018_10_23_010852) do
 
   create_table "ee_reports", force: :cascade do |t|
     t.datetime "reporting_date"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_10_22_012147) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "approval_flg"
+    t.integer "recommended_group"
   end
 
   create_table "et_reports", force: :cascade do |t|

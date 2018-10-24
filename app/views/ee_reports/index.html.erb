@@ -18,30 +18,8 @@
       <th>所在地</th>
       <th>試験会場</th>
       <th>合格発表日</th>
-      <th>入試形態</th>
-      <th>特別推薦</th>
-      <th>指定校推薦</th>
-      <th>AO推薦</th>
-      <th>一般推薦</th>
-      <th>スポーツ推薦</th>
-      <th>自己推薦</th>
-      <th>その他の推薦</th>
-      <th>試験時間（国語）</th>
-      <th>試験時間（数学）</th>
-      <th>試験時間（社会）</th>
-      <th>試験時間（理科）</th>
-      <th>試験時間（英語）</th>
-      <th>試験科目（その他）</th>
-      <th>試験時間（その他）</th>
-      <th>問題の内容</th>
-      <th>問題画像</th>
-      <th>感想（一般）</th>
-      <th>推薦形態</th>
-      <th>面接内容</th>
-      <th>面接画像</th>
-      <th>小論文の内容</th>
-      <th>筆記の内容</th>
-      <th>感想（推薦）</th>
+      <th>入試形態</th> 
+      <th>推薦入試形態</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -63,29 +41,7 @@
         <td><%= ee_report.examination_hall %></td>
         <td><%= ee_report.result_publication_date %></td>
         <td><%= ee_report.entrance_form %></td>
-        <td><%= ee_report.r_special %></td>
-        <td><%= ee_report.r_designation %></td>
-        <td><%= ee_report.r_ao %></td>
-        <td><%= ee_report.r_general %></td>
-        <td><%= ee_report.r_sports %></td>
-        <td><%= ee_report.r_self %></td>
-        <td><%= ee_report.r_others %></td>
-        <td><%= ee_report.t_subject_japanese %></td>
-        <td><%= ee_report.t_subject_math %></td>
-        <td><%= ee_report.t_subject_society %></td>
-        <td><%= ee_report.t_subject_science %></td>
-        <td><%= ee_report.t_subject_english %></td>
-        <td><%= ee_report.t_subject_other %></td>
-        <td><%= ee_report.t_subject_other_time %></td>
-        <td><%= ee_report.g_q_contents %></td>
-        <td><%= ee_report.g_q_image %></td>
-        <td><%= ee_report.g_impressions %></td>
-        <td><%= ee_report.recommended_form %></td>
-        <td><%= ee_report.i_q_contents %></td>
-        <td><%= ee_report.i_q_images %></td>
-        <td><%= ee_report.e_contents %></td>
-        <td><%= ee_report.w_contents %></td>
-        <td><%= ee_report.r_impression %></td>
+        <td><%= ee_report.recommended_group %></td>
         <td><%= link_to '閲覧', ee_report %></td>
         <td><%= link_to '編集', edit_ee_report_path(ee_report) %></td>
         <td><%= link_to '削除', ee_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -96,4 +52,4 @@
 
 <br>
 
-<%= link_to 'New Ee Report', new_ee_report_path %>
+<%= link_to '報告書作成', new_ee_report_path %>
