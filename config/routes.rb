@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'welcome/login'
+  post 'welcome/check'
+  get 'welcome/destroy'
   post '/ee_searchs', to: 'ee_report_searchs#search'
   post '/et_searchs', to: 'et_report_searchs#search'
   get 'et_report_searchs/index'
