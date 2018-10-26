@@ -46,7 +46,7 @@
   </div>
 
   <div class="field">
-    事業所名<%= form.text_field :office_name %>
+    事業所名<%= form.text_field :office_name, :size=>"50" %>
   </div>
   </div>
   </br>
@@ -58,10 +58,10 @@
   </div>
 
   <label style="margin-top: 0px;">
-    <%= form.radio_button :introduction_number,"学校斡旋" %>学校斡旋
+  <%= form.radio_button :introduction_number,"1" %>学校斡旋
   </label>
   <label style="margin-top: 0px;">
-    <%= form.radio_button :introduction_number,"縁故" %>縁故
+    <%= form.radio_button :introduction_number,"2" %>縁故
   </label>
     </div>
     </br>
@@ -74,20 +74,20 @@
   <div style="margin-right: 10px;">
   <div class="field">
     <%= form.label :郵便番号 %>〒
-    <%= form.number_field :postal_code %>
+    <%= form.number_field :postal_code %>(例699000)
   </div>
   </div>
 
   <div style="margin-right: 10px;">
   <div class="field">
     <%= form.label :所在地 %>
-    <%= form.text_field :street_address %>
+    <%= form.text_field :street_address, :size=>"50" %>
   </div>
   </div>
 
   <div class="field">
     <%= form.label :試験会場 %>
-    <%= form.text_field :examination_hall %>
+    <%= form.text_field :examination_hall, :size=>"50" %>
   </div>
   </div>
 
@@ -99,64 +99,58 @@
   <div style="margin-right: 10px;">
   <div class="field">
     <%= form.label :男 %>
-    <%= form.number_field :examinees_count_man %>人
+    <%= form.number_field :examinees_count_man, :size=>"10" %>人
   </div>
   </div>
 
   <div class="field">
     <%= form.label :女 %>
-    <%= form.number_field :examinees_count_woman %>人
+    <%= form.number_field :examinees_count_woman, :size=>"10" %>人
   </div>
   </div>
   
   <%= form.label :選考方法 %>
   <label style="margin-top: 0px;">
-  <%= form.radio_button :selection_method,"一次" %>一次
-</label>
+  <label><%= form.radio_button :selection_method,"1" %>一次</label>
+  </label>
 <label style="margin-top: 0px;">
-  <%= form.radio_button :selection_method,"二次" %>二次
+  <label><%= form.radio_button :selection_method,"2" %>二次</label>
 </label>
 
   <div style="display:inline-flex">
   <div style="margin-right: 10px;">
   <div class="field">
-    <%= form.label :筆記 %>
-    <%= form.check_box :s_method_writing %>
+    <%= form.check_box :s_method_writing %>筆記
   </div>
   </div>
 
   <div style="margin-right: 10px;">
   <div class="field">
-    <%= form.label :適正 %>
-    <%= form.check_box :s_method_appropriate %>
+    <%= form.check_box :s_method_appropriate %>適正
   </div>
   </div>
 
   <div style="margin-right: 10px;">
   <div class="field">
-    <%= form.label :面接 %>
-    <%= form.check_box :s_method_interview %>
+    <%= form.check_box :s_method_interview %>面接
   </div>
   </div>
 
   <div style="margin-right: 10px;">
   <div class="field">
-    <%= form.label :作文 %>
-    <%= form.check_box :s_method_composition %>
+    <%= form.check_box :s_method_composition %>作文
   </div>
   </div>
 
   <div style="margin-right: 10px;">
   <div class="field">
-    <%= form.label :身体 %>
-    <%= form.check_box :s_method_physical %>
+    <%= form.check_box :s_method_physical %>身体
   </div>
   </div>
 
   <div style="margin-right: 10px;">
   <div class="field">
-    <%= form.label :その他の内容 %>
-    <%= form.check_box :s_method_other %>
+    <%= form.check_box :s_method_other %>その他の内容
   </div>
   </div>
   </div>
@@ -210,9 +204,11 @@
   </div>
 
   <div style="display:inline-flex">
+  <div style="margin-right: 10px;">
   <div class="field">
     <%= form.label :試験時間（一般常識） %>
     <%= form.number_field :t_subject_general %>分
+  </div>
   </div>
 
   <div class="field">
@@ -225,10 +221,10 @@
   <div style="display:inline-flex">
   <div class="field">
     <%= form.label :面接方法 %>
-  <%= form.radio_button :i_method_one,"1人" %>1人
-    <%= form.radio_button :i_method_one,"複数" %>複数
-    <%= form.number_field :i_method_one %>人
-    <%= form.radio_button :i_method_one,"集団討論" %>集団討論
+  <%= form.radio_button :i_method_one,"1" %>1人
+  <%= form.radio_button :i_method_one,"2" %>複数
+  <%= form.number_field :i_method_count %>人
+  <%= form.radio_button :i_method_one,"3" %>集団討論
   </div>
 
   <div class="field">
@@ -261,14 +257,14 @@
 
   <div style="margin-left: 300px;">
   <div class="field">
-    <%= form.label :画像の添付 %>
+    <%= form.label :画像 %>
     <%= form.file_field :i_image %>
   </div>
   </div>
 
   <div class="field">
     <%= form.label :作文（題目） %>
-    <%= form.text_field :composition_title %>
+    <%= form.text_field :composition_title, :size=>"50" %>
   </div>
 
   <div class="field">
