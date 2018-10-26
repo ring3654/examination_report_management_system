@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ExaminationReportManagementSystem</title>
+    <title>受検報告書管理システム</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <p style="text-align: right">ユーザー名:<%= session[:login_user] %></p>
+    <div style="text-align: right">
+    <a href="http://localhost:3000/welcome/destroy" style="text-decoration: none;">ログアウト</a>
+    </div>
   </head>
 
   <body>

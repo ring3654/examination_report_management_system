@@ -72,6 +72,11 @@ class UsersController < ApplicationController
     render :index
   end
 
+  def copy
+    old_user = User.find(params[:id])
+    @user = User.new(old_user.attributes)
+    render :new
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.
