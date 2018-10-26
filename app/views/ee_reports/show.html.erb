@@ -1,189 +1,159 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Reporting date:</strong>
+  <strong>報告年月日:</strong>
   <%= @ee_report.reporting_date %>
 </p>
 
 <p>
-  <strong>Student class:</strong>
+  <strong>組:</strong>
   <%= @ee_report.student_class %>
 </p>
 
 <p>
-  <strong>Student number:</strong>
+  <strong>番:</strong>
   <%= @ee_report.student_number %>
 </p>
 
 <p>
-  <strong>Student:</strong>
+  <strong>受験者ID:</strong>
   <%= @ee_report.student_id %>
 </p>
 
 <p>
-  <strong>School name:</strong>
+  <strong>学校名:</strong>
   <%= @ee_report.school_name %>
 </p>
 
 <p>
-  <strong>S faculty name:</strong>
+  <strong>学部名:</strong>
   <%= @ee_report.s_faculty_name %>
 </p>
 
 <p>
-  <strong>S department name:</strong>
+  <strong>学科名:</strong>
   <%= @ee_report.s_department_name %>
 </p>
 
 <p>
-  <strong>S course name:</strong>
+  <strong>コース名:</strong>
   <%= @ee_report.s_course_name %>
 </p>
 
 <p>
-  <strong>Test day:</strong>
+  <strong>試験日:</strong>
   <%= @ee_report.test_day %>
 </p>
 
 <p>
-  <strong>Postal code:</strong>
+  <strong>郵便番号:</strong>
   <%= @ee_report.postal_code %>
 </p>
 
 <p>
-  <strong>Street address:</strong>
+  <strong>所在地:</strong>
   <%= @ee_report.street_address %>
 </p>
 
 <p>
-  <strong>Examination hall:</strong>
+  <strong>試験会場:</strong>
   <%= @ee_report.examination_hall %>
 </p>
 
 <p>
-  <strong>Result publication date:</strong>
+  <strong>合格発表日 date:</strong>
   <%= @ee_report.result_publication_date %>
 </p>
 
 <p>
-  <strong>Entrance form:</strong>
+  <strong>入試形態:</strong>
   <%= @ee_report.entrance_form %>
 </p>
 
 <p>
-  <strong>R special:</strong>
-  <%= @ee_report.r_special %>
+  <strong>推薦入試形態:</strong>
+  <%= @ee_report.recommended_group %>
 </p>
 
 <p>
-  <strong>R designation:</strong>
-  <%= @ee_report.r_designation %>
-</p>
-
-<p>
-  <strong>R ao:</strong>
-  <%= @ee_report.r_ao %>
-</p>
-
-<p>
-  <strong>R general:</strong>
-  <%= @ee_report.r_general %>
-</p>
-
-<p>
-  <strong>R sports:</strong>
-  <%= @ee_report.r_sports %>
-</p>
-
-<p>
-  <strong>R self:</strong>
-  <%= @ee_report.r_self %>
-</p>
-
-<p>
-  <strong>R others:</strong>
-  <%= @ee_report.r_others %>
-</p>
-
-<p>
-  <strong>T subject japanese:</strong>
+  <strong>試験時間（国語）:</strong>
   <%= @ee_report.t_subject_japanese %>
 </p>
 
 <p>
-  <strong>T subject math:</strong>
+  <strong>試験時間（数学）:</strong>
   <%= @ee_report.t_subject_math %>
 </p>
 
 <p>
-  <strong>T subject society:</strong>
+  <strong>試験時間（社会）:</strong>
   <%= @ee_report.t_subject_society %>
 </p>
 
 <p>
-  <strong>T subject science:</strong>
+  <strong>試験時間（理科）:</strong>
   <%= @ee_report.t_subject_science %>
 </p>
 
 <p>
-  <strong>T subject english:</strong>
+  <strong>試験時間（英語）:</strong>
   <%= @ee_report.t_subject_english %>
 </p>
 
 <p>
-  <strong>T subject other:</strong>
+  <strong>試験科目（その他）:</strong>
   <%= @ee_report.t_subject_other %>
 </p>
 
 <p>
-  <strong>T subject other time:</strong>
+  <strong>試験時間（その他）:</strong>
   <%= @ee_report.t_subject_other_time %>
 </p>
 
 <p>
-  <strong>G q contents:</strong>
+  <strong>問題の内容:</strong>
   <%= @ee_report.g_q_contents %>
 </p>
 
 <p>
-  <strong>G q image:</strong>
+  <strong>問題画像:</strong>
   <%= @ee_report.g_q_image %>
 </p>
 
 <p>
-  <strong>G impressions:</strong>
+  <strong>感想:</strong>
   <%= @ee_report.g_impressions %>
 </p>
 
 <p>
-  <strong>Recommended form:</strong>
+  <strong>推薦形態:</strong>
   <%= @ee_report.recommended_form %>
 </p>
 
 <p>
-  <strong>I q contents:</strong>
+  <strong>面接内容:</strong>
   <%= @ee_report.i_q_contents %>
 </p>
 
 <p>
-  <strong>I q images:</strong>
+  <strong>面接画像:</strong>
   <%= @ee_report.i_q_images %>
 </p>
 
 <p>
-  <strong>E contents:</strong>
+  <strong>小論文の内容:</strong>
   <%= @ee_report.e_contents %>
 </p>
 
 <p>
-  <strong>W contents:</strong>
+  <strong>筆記の内容:</strong>
   <%= @ee_report.w_contents %>
 </p>
 
 <p>
-  <strong>R impression:</strong>
+  <strong>感想（推薦）:</strong>
   <%= @ee_report.r_impression %>
 </p>
 
-<%= link_to 'Edit', edit_ee_report_path(@ee_report) %> |
-<%= link_to 'Back', ee_reports_path %>
+<%= link_to '編集', edit_ee_report_path(@ee_report) %> |
+<%= link_to '戻る', ee_reports_path %>

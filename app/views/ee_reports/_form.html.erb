@@ -111,13 +111,13 @@
     <label><%= form.radio_button :entrance_form,"2" %>推薦入試</label>
 
     <div style="display:inline-flex">
-    <label><%= form.radio_button :entrance_forms,"2" %>特別入試</label>
-    <label><%= form.radio_button :entrance_forms,"2" %>指定校推薦</label>
-    <label><%= form.radio_button :entrance_forms,"2" %>AO推薦</label>
-    <label><%= form.radio_button :entrance_forms,"2" %>一般推薦</label>    
-    <label><%= form.radio_button :entrance_forms,"2" %>スポーツ推薦</label>
-    <label><%= form.radio_button :entrance_forms,"2" %>自己推薦</label>
-    <label><%= form.radio_button :entrance_forms,"2" %>その他の推薦</label>
+    <label><%= form.radio_button :recommended_group,"1" %>特別入試</label>
+    <label><%= form.radio_button :recommended_group,"2" %>指定校推薦</label>
+    <label><%= form.radio_button :recommended_group,"3" %>AO推薦</label>
+    <label><%= form.radio_button :recommended_group,"4" %>一般推薦</label>    
+    <label><%= form.radio_button :recommended_group,"5" %>スポーツ推薦</label>
+    <label><%= form.radio_button :recommended_group,"6" %>自己推薦</label>
+    <label><%= form.radio_button :recommended_group,"7" %>その他の推薦</label>
     </div>
 
     <div style="margin-top:40px;">
@@ -195,18 +195,18 @@
     <%= form.label :推薦形態 %>
   </div>
   <div style="display:inline-flex">
-  <label><%= form.radio_button :recommended_form,"3" %>「書類選考」のみ</label>
-  <label><%= form.radio_button :recommended_form,"3" %>「書類選考」＋「面接」</label>
+  <label><%= form.radio_button :recommended_form,"1" %>「書類選考」のみ</label>
+  <label><%= form.radio_button :recommended_form,"2" %>「書類選考」＋「面接」</label>
   </div>
 <br>
   <div style="display:inline-flex">
   <label>
   <%= form.radio_button :recommended_form,"3" %>「書類選考」＋「面接」＋ 試験</label>
   <label style="margin-right:20px;">
-  <%= form.radio_button :recommended_form,"3" %>「書類選考」＋「面接」＋ 小論文（作文）</label>
+  <%= form.radio_button :recommended_form,"4" %>「書類選考」＋「面接」＋ 小論文（作文）</label>
   </div>
   </br>
-  <label><%= form.radio_button :recommended_form,"3" %>「書類選考」＋「面接」＋ 小論文（作文）＋ 試験</label>
+  <label><%= form.radio_button :recommended_form,"5" %>「書類選考」＋「面接」＋ 小論文（作文）＋ 試験</label>
   <div style="margin-top:50px;">
   <%= form.label :２「推薦入試」受験者%>
   </div>

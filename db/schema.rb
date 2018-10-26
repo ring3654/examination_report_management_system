@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_014212) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "approval_flg"
+    t.integer "recommended_group"
   end
 
   create_table "et_reports", force: :cascade do |t|
