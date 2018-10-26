@@ -9,12 +9,9 @@ class WelcomeController < ApplicationController
       @user_id = params[:user_id]
       password = params[:password]
       user = User.find_by(user_id: @user_id)
-  logger.debug("=====================")
-  logger.debug(password)
-  logger.debug("=====================")
       if user.present?
         if user.authenticate("#{password}")
-             session[:login_user] = @user_id
+             session[:login_user] = user.name
              redirect_to home_top_path
         else
           flash[:error] = "パスワードが正しくありません。"
