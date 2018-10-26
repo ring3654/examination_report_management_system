@@ -62,5 +62,10 @@ class EtReport < ApplicationRecord
            errors[:base] << '試験会場は必ず入力してください。'
         end
 
+        if selection_method.blank?
+           errors[:base] << '選考方法は必ず選択してください。'
+        end
+
+
     end
 end
