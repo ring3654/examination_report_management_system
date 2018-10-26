@@ -35,5 +35,8 @@ class EeReport < ApplicationRecord
    if entrance_form = 1 and recommended_group.present?
     errors[:base] << '一般入試の際は推薦入試形態を入力しないでください'
  end
- end
+ if entrance_form = 1 and recommended_form.present?
+  errors[:base] << '一般入試の際は推薦形態を入力しないでください'
+end
+end
 end
