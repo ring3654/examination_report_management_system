@@ -23,7 +23,9 @@
 
   <div class="field">
     <%= form.label :パスワード %>
-    <%= form.password_field :pass %>
+    <%= form.password_field :password %>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
   </div>
 
     <%= form.hidden_field :flg, :value => "0" %>
