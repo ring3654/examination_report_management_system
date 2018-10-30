@@ -20,6 +20,7 @@
       <th>合格発表日</th>
       <th>入試形態</th> 
       <th>推薦入試形態</th>
+      <th>承認フラグ</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -27,7 +28,7 @@
   <tbody>
     <% @ee_reports.each do |ee_report| %>
       <tr>
-        <td><%= ee_report.reporting_date %></td>
+        <td><%= ee_report.reporting_date.strftime("%Y年%m月%d日") %></td>
         <td><%= ee_report.student_class %></td>
         <td><%= ee_report.student_number %></td>
         <td><%= ee_report.student_id %></td>
@@ -35,13 +36,14 @@
         <td><%= ee_report.s_faculty_name %></td>
         <td><%= ee_report.s_department_name %></td>
         <td><%= ee_report.s_course_name %></td>
-        <td><%= ee_report.test_day %></td>
+        <td><%= ee_report.test_day.strftime("%Y年%m月%d日") %></td>
         <td><%= ee_report.postal_code %></td>
         <td><%= ee_report.street_address %></td>
         <td><%= ee_report.examination_hall %></td>
-        <td><%= ee_report.result_publication_date %></td>
+        <td><%= ee_report.result_publication_date.strftime("%Y年%m月%d日") %></td>
         <td><%= ee_report.entrance_form %></td>
         <td><%= ee_report.recommended_group %></td>
+        <td><%= ee_report.approval_flg %></td>
         <td><%= link_to '閲覧', ee_report %></td>
         <td><%= link_to '編集', edit_ee_report_path(ee_report) %></td>
         <td><%= link_to '削除', ee_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>

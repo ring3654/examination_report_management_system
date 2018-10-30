@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      user:
+    attributes:
+      user:
+        user_id: "ユーザーID"
+        annual: "年度"
+        password: "パスワード"
+        
