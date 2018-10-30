@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'unapproved_reports/index'
+  get 'unapproved_reports/show'
   get 'welcome/login'
   post 'welcome/check'
   get 'welcome/destroy'

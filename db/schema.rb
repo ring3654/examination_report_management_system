@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_014212) do
+ActiveRecord::Schema.define(version: 2018_10_30_014758) do
 
   create_table "ee_reports", force: :cascade do |t|
     t.datetime "reporting_date"
     t.integer "student_class"
     t.integer "student_number"
-    t.integer "student_id"
+    t.string "student_id"
     t.string "school_name"
     t.string "s_faculty_name"
     t.string "s_department_name"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_014212) do
     t.datetime "reporting_date"
     t.integer "student_class"
     t.integer "student_number"
-    t.integer "student_id"
+    t.string "student_id"
     t.string "job_category"
     t.string "office_name"
     t.integer "job_vote_number"
