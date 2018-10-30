@@ -80,6 +80,6 @@ class EeReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ee_report_params
-      params.require(:ee_report).permit(:reporting_date, :student_class, :student_number, :student_id, :school_name, :s_faculty_name, :s_department_name, :s_course_name, :test_day, :postal_code, :street_address, :examination_hall, :result_publication_date, :entrance_form, :recommended_group)
+      params.require(:ee_report).permit(:reporting_date, :student_class, :student_number, :student_id, :school_name, :s_faculty_name, :s_department_name, :s_course_name, :test_day, :postal_code, :street_address, :examination_hall, :result_publication_date, :entrance_form, :recommended_group,:t_subject_japanese,:t_subject_math,:t_subject_society,:t_subject_science,:t_subject_english,:t_subject_other,:t_subject_other_time,:g_q_contents,:g_q_image,:g_impressions,:recommended_form,:i_q_contents,:i_q_images,:e_contents,:w_contents,:r_impression,:approval_flg)
     end
 end
