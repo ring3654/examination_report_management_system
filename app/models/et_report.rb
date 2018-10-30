@@ -4,27 +4,26 @@ class EtReport < ApplicationRecord
     def error_check
         if student_class.blank?
              errors[:base] <<  '組は必ず入力してください。'
-        end
-
+        else
         if student_class.to_i <= 0 or student_class.to_i > 4
             errors[:base] << '組は1以上4以下で入力してください。'
         end
-
+    end
         if student_number.blank?
             errors[:base] << '番号は必ず入力してください。'
-        end
-
+        else
         if student_number.to_i <= 0 or student_number.to_i >40
             errors[:base] << '番号は1以上40以下で入力してください。'
         end
+    end
 
         if student_id.blank?
             errors[:base] << '受験者IDは必ず入力してください。'
+        else
+            if student_id.to_i <= 0
+            errors[:base] << '受験者IDが利用できない値です。'
         end
-
-        if student_id.to_i <= 0
-            errors[:base] << '受験者IDの値が－です。'
-        end
+    end
 
         if job_category.blank?
             errors[:base] << '職種は必ず入力してください。'
@@ -36,11 +35,11 @@ class EtReport < ApplicationRecord
 
         if job_vote_number.blank?
            errors[:base] << '求人票受付番号は必ず入力してください。'
-        end
-
+        else
         if job_vote_number.to_i <= 0
-           errors[:base] << '求人票受付番号の値が－です。'
+           errors[:base] << '求人票受付番号が利用できない値です。'
         end
+    end
 
         if introduction_number.blank?
            errors[:base] << '学校斡旋か縁故か選択してください。'
@@ -48,11 +47,11 @@ class EtReport < ApplicationRecord
 
         if postal_code.blank?
            errors[:base] << '郵便番号は必ず入力してください。'
-        end
-
+        else
         if postal_code.to_i <= 0
-           errors[:base] << '郵便番号の値が－です。'
+           errors[:base] << '郵便番号が利用できない値です。'
         end
+    end
 
         if street_address.blank?
            errors[:base] << '所在地は必ず入力してください。'
@@ -63,7 +62,7 @@ class EtReport < ApplicationRecord
         end
 
         if selection_method.blank?
-           errors[:base] << '選考方法は必ず選択してください。'
+           errors[:base] << '学校斡旋か縁故かどちらか選択してください。'
         end
 
 
