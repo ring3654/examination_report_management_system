@@ -9,7 +9,7 @@ class EtReport < ApplicationRecord
             errors[:base] << '組は1以上4以下で入力してください。'
         end
     end
-        if student_number.blank?
+    if student_number.blank?
             errors[:base] << '番号は必ず入力してください。'
         else
         if student_number.to_i <= 0 or student_number.to_i >40
@@ -17,9 +17,9 @@ class EtReport < ApplicationRecord
         end
     end
 
-        if student_id.blank?
+     if student_id.blank?
             errors[:base] << '受験者IDは必ず入力してください。'
-    end
+        end
 
         if job_category.blank?
             errors[:base] << '職種は必ず入力してください。'

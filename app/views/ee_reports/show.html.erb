@@ -155,5 +155,11 @@
   <%= @ee_report.r_impression %>
 </p>
 
+<p>
+  <strong>承認フラグ:</strong>
+  <%= @ee_report.approval_flg %>
+</p>
+
+
 <%= link_to '編集', edit_ee_report_path(@ee_report) %> |
 <%= link_to '戻る', ee_reports_path %>

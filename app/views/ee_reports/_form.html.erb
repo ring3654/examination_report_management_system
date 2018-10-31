@@ -243,6 +243,8 @@
     <%= form.text_area :r_impression, :size=>"60x10" %>
   </div>
 
+  <label><%= form.radio_button :approval_flg,"0", {:checked => true} %>未承認</label>
+
   <div class="actions">
     <%= form.submit %>
   </div>
