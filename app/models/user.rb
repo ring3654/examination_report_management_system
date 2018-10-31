@@ -1,7 +1,6 @@
 class User < ApplicationRecord
     validates :user_id, uniqueness: {message: "は重複したＩＤを登録できません"}
-    validates :annual, length: { is: 4, message: "は必ず4桁で入力してください" }
-    validates :user_id, length: { is: 9, message: "は必ず9桁で登録してください" }
+    validates :user_id, length: { maximum: 9, minimum: 5, message: "は必ず5～9桁で登録してください" }
 
     validate :error_check
     def error_check
@@ -10,9 +9,6 @@ class User < ApplicationRecord
      end        
       if name.blank?
         errors[:base] << '氏名は必ず入力してください'
-      end
-      if annual.blank?
-        errors[:base] << '年度は必ず入力してください'
       end
     end
     has_secure_password     

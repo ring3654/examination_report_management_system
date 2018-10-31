@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @user.annual = @user.user_id.slice(1..4)
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'ユーザーの作成が完了しました。' }
@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @user.annual = @user.user_id.slice(1..4)
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'ユーザーの更新が完了しました。' }
