@@ -2,6 +2,14 @@ class EeReport < ApplicationRecord
 
     validate :error_check
     def error_check
+      if reporting_date > Date.today
+        errors[:base] << '報告年月日の値が不正です'
+      end
+
+      if test_day > Date.today
+        errors[:base] << '試験日の値が不正です'
+      end
+
       if student_class.blank?
         errors[:base] << '組は必ず入力してください'
      end        
