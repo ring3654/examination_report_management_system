@@ -19,10 +19,6 @@ class EtReport < ApplicationRecord
 
         if student_id.blank?
             errors[:base] << '受験者IDは必ず入力してください。'
-        else
-            if student_id.to_i <= 0
-            errors[:base] << '受験者IDが利用できない値です。'
-        end
     end
 
         if job_category.blank?
