@@ -2,7 +2,7 @@
 
 <h1>就職試験受験報告書一覧</h1>
 
-<table>
+<table border="1"> 
   <thead>
     <tr>
       <th>報告年月日</th>
@@ -42,6 +42,11 @@
         <td><%= et_report.street_address %></td>
         <td><%= et_report.examination_hall %></td>
         <td><%= et_report.selection_method %></td>
+        <td><%= et_report.i_image %>
+        <% if et_report.filename.present? %>
+        <br>
+        <%= image_tag book.filename %>
+        <% end %></td>
         <td><%= et_report.approval_flg %></td>
         <td><%= link_to '閲覧', et_report %></td>
         <td><%= link_to '編集', edit_et_report_path(et_report) %></td>

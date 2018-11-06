@@ -2,7 +2,7 @@
 
 <p>
   <strong>報告年月日:</strong>
-  <%= @et_report.reporting_date %>
+  <%= @et_report.reporting_date.strftime("%Y年%m月%d日") %>
 </p>
 
 <p>
@@ -42,7 +42,7 @@
 
 <p>
   <strong>試験日:</strong>
-  <%= @et_report.test_day %>
+  <%= @et_report.test_day.strftime("%Y年%m月%d日") %>
 </p>
 
 <p>
@@ -156,7 +156,7 @@
 </p>
 
 <p>
-  <strong>面接方法（人数）:</strong>
+  <strong>面接人数:</strong>
   <%= @et_report.i_method_count %>
 </p>
 
