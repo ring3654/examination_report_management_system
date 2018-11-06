@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  PER = 10
   # GET /users
   # GET /users.json
   def index
-    @users = User.all.order(:user_id)
+    @users = User.all.order(:user_id).page(params[:page]).per(PER)
   end
 
   # GET /users/1
