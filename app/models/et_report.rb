@@ -6,11 +6,16 @@ class EtReport < ApplicationRecord
            errors[:base] << '報告年月日が今日以降の値です'
        end
 
+       if reporting_date < test_day
+           errors[:base] << '報告年月日が試験日より前です'
+       end
+
         if student_class.blank?
              errors[:base] <<  '組は必ず入力してください。'
         elsif student_class.to_i <= 0 or student_class.to_i > 4
             errors[:base] << '組は1以上4以下で入力してください。'
         end
+
         if student_number.blank?
             errors[:base] << '番号は必ず入力してください。'
         elsif student_number.to_i <= 0 or student_number.to_i >40
