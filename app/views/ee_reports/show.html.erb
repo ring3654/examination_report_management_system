@@ -2,7 +2,7 @@
 
 <p>
   <strong>報告年月日:</strong>
-  <%= @ee_report.reporting_date %>
+  <%= @ee_report.reporting_date.strftime("%Y年%m月%d日") %>
 </p>
 
 <p>
@@ -42,7 +42,7 @@
 
 <p>
   <strong>試験日:</strong>
-  <%= @ee_report.test_day %>
+  <%= @ee_report.test_day.strftime("%Y年%m月%d日") %>
 </p>
 
 <p>
@@ -62,7 +62,7 @@
 
 <p>
   <strong>合格発表日 date:</strong>
-  <%= @ee_report.result_publication_date %>
+  <%= @ee_report.result_publication_date.strftime("%Y年%m月%d日") %>
 </p>
 
 <p>
@@ -77,27 +77,27 @@
 
 <p>
   <strong>試験時間（国語）:</strong>
-  <%= @ee_report.t_subject_japanese %>
+  <%= @ee_report.t_subject_japanese %>分
 </p>
 
 <p>
   <strong>試験時間（数学）:</strong>
-  <%= @ee_report.t_subject_math %>
+  <%= @ee_report.t_subject_math %>分
 </p>
 
 <p>
   <strong>試験時間（社会）:</strong>
-  <%= @ee_report.t_subject_society %>
+  <%= @ee_report.t_subject_society %>分
 </p>
 
 <p>
   <strong>試験時間（理科）:</strong>
-  <%= @ee_report.t_subject_science %>
+  <%= @ee_report.t_subject_science %>分
 </p>
 
 <p>
   <strong>試験時間（英語）:</strong>
-  <%= @ee_report.t_subject_english %>
+  <%= @ee_report.t_subject_english %>分
 </p>
 
 <p>
@@ -107,7 +107,7 @@
 
 <p>
   <strong>試験時間（その他）:</strong>
-  <%= @ee_report.t_subject_other_time %>
+  <%= @ee_report.t_subject_other_time %>分
 </p>
 
 <p>

@@ -2,7 +2,7 @@ class EeReport < ApplicationRecord
 
     validate :error_check
     def error_check
-      if reporting_date > Date.today
+      if reporting_date > Date.today or reporting_date < test_day
         errors[:base] << '報告年月日の値が不正です'
       end
 
@@ -39,9 +39,12 @@ class EeReport < ApplicationRecord
    end
    if entrance_form == 1 and recommended_group.present?
     errors[:base] << '一般入試の際は推薦入試形態を入力しないでください'
- end
- if entrance_form == 1 and recommended_form.present?
-  errors[:base] << '一般入試の際は推薦形態を入力しないでください'
-end
+  end
+    if entrance_form == 1 and recommended_form.present?
+    errors[:base] << '一般入試の際は推薦形態を入力しないでください'
+  end
+  if  recommended_form == 2 and i_q_contents.blank?
+      "面接内容を入力してください"
+  end
 end
 end
