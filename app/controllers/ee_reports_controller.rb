@@ -1,10 +1,11 @@
 class EeReportsController < ApplicationController
   before_action :set_ee_report, only: [:show, :edit, :update, :destroy]
 
+  PER = 10
   # GET /ee_reports
   # GET /ee_reports.json
   def index
-    @ee_reports = EeReport.all
+    @ee_reports = EeReport.all.page(params[:page]).per(PER)
   end
 
   # GET /ee_reports/1

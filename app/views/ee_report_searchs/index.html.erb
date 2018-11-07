@@ -40,6 +40,7 @@
         <td><%= link_to '詳細', ee_report_searchs_show_path %></td>
       </tr>
     <% end %>
+    <%= paginate @ee_reports %>
   </tbody>
 </table>
 

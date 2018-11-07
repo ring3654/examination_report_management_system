@@ -1,6 +1,9 @@
 class EeReportSearchsController < ApplicationController
+  PER = 10
+
+
   def index
-    @ee_reports = EeReport.all
+    @ee_reports = EeReport.all.page(params[:page]).per(PER)
   end
 
   def show
