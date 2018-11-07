@@ -10,14 +10,15 @@
       <th>番号</th>
       <th>受験者ID</th>
       <th>職種</th>
-    　<th>事業所名</th>
-    　<th>求人票受付番号</th>
+      <th>事業所名</th>
+      <th>求人票受付番号</th>
       <th>紹介番号</th>
       <th>試験日</th>
       <th>郵便番号</th>
       <th>所在地</th>
       <th>試験会場</th>
       <th>選考方法</th>
+      <th>面接画像</th>
       <th>承認フラグ</th>
 
       
@@ -29,7 +30,7 @@
     <% @et_reports.each do |et_report| %>
       <tr>
     
-      　<td><%= et_report.reporting_date.strftime("%Y年%m月%d日") %></td>
+        <td><%= et_report.reporting_date.strftime("%Y年%m月%d日") %></td>
         <td><%= et_report.student_class %></td>
         <td><%= et_report.student_number %></td>
         <td><%= et_report.student_id %></td>
@@ -42,11 +43,12 @@
         <td><%= et_report.street_address %></td>
         <td><%= et_report.examination_hall %></td>
         <td><%= et_report.selection_method %></td>
-        <td><%= et_report.i_image %>
-        <% if et_report.filename.present? %>
-        <br>
-        <%= image_tag book.filename %>
-        <% end %></td>
+        <td>
+          <% if et_report.i_image.present? %>
+          <br>
+          <%= image_tag et_report.i_image %>
+          <% end %>
+        </td>
         <td><%= et_report.approval_flg %></td>
         <td><%= link_to '閲覧', et_report %></td>
         <td><%= link_to '編集', edit_et_report_path(et_report) %></td>
