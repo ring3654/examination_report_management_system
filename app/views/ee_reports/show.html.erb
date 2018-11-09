@@ -61,7 +61,7 @@
 </p>
 
 <p>
-  <strong>合格発表日 date:</strong>
+  <strong>合格発表日:</strong>
   <%= @ee_report.result_publication_date.strftime("%Y年%m月%d日") %>
 </p>
 
@@ -117,8 +117,8 @@
 
 <p>
   <strong>問題画像:</strong>
-  <%= @ee_report.g_q_image %>
-</p>
+  <%= image_tag "/images/#{@ee_report.g_q_image}",width: 200 %>
+  </p>
 
 <p>
   <strong>感想:</strong>
@@ -137,7 +137,8 @@
 
 <p>
   <strong>面接画像:</strong>
-  <%= @ee_report.i_q_images %>
+  <%= image_tag "/images/#{@ee_report.i_q_images}",width: 200 %>
+
 </p>
 
 <p>
