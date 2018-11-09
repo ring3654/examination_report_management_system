@@ -46,7 +46,7 @@
         <td>
           <% if et_report.i_image.present? %>
           <br>
-          <%= image_tag et_report.i_image %>
+          <%= image_tag "/images/#{et_report.i_image}",width: 200 %>
           <% end %>
         </td>
         <td><%= et_report.approval_flg %></td>
