@@ -62,12 +62,12 @@
 
 <p>
   <strong>男性受験者数:</strong>
-  <%= @et_report.examinees_count_man %>
+  <%= @et_report.examinees_count_man %>人
 </p>
 
 <p>
   <strong>女性受験者数:</strong>
-  <%= @et_report.examinees_count_woman %>
+  <%= @et_report.examinees_count_woman %>人
 </p>
 
 <p>
@@ -107,27 +107,27 @@
 
 <p>
   <strong>試験時間（国語）:</strong>
-  <%= @et_report.t_subject_japanese %>
+  <%= @et_report.t_subject_japanese %>分
 </p>
 
 <p>
   <strong>試験時間（数学）:</strong>
-  <%= @et_report.t_subject_math %>
+  <%= @et_report.t_subject_math %>分
 </p>
 
 <p>
   <strong>試験時間（社会）:</strong>
-  <%= @et_report.t_subject_society %>
+  <%= @et_report.t_subject_society %>分
 </p>
 
 <p>
   <strong>試験時間（理科）:</strong>
-  <%= @et_report.t_subject_science %>
+  <%= @et_report.t_subject_science %>分
 </p>
 
 <p>
   <strong>試験時間（英語）:</strong>
-  <%= @et_report.t_subject_english %>
+  <%= @et_report.t_subject_english %>分
 </p>
 
 <p>
@@ -137,7 +137,7 @@
 
 <p>
   <strong>試験時間（その他の時間）:</strong>
-  <%= @et_report.t_subject_other_time %>
+  <%= @et_report.t_subject_other_time %>分
 </p>
 
 <p>
@@ -147,7 +147,7 @@
 
 <p>
   <strong>試験時間（適正）:</strong>
-  <%= @et_report.t_subject_aptitude %>
+  <%= @et_report.t_subject_aptitude %>分
 </p>
 
 <p>
@@ -157,7 +157,7 @@
 
 <p>
   <strong>面接人数:</strong>
-  <%= @et_report.i_method_count %>
+  <%= @et_report.i_method_count %>人
 </p>
 
 <p>
@@ -167,7 +167,7 @@
 
 <p>
   <strong>面接時間:</strong>
-  <%= @et_report.i_time %>
+  <%= @et_report.i_time %>分
 </p>
 
 <p>
@@ -182,7 +182,8 @@
 
 <p>
   <strong>面接画像:</strong>
-  <%= @et_report.i_image %>
+  <br>
+  <%= image_tag "/images/#{@et_report.i_image}",width: 400 %>
 </p>
 
 <p>
@@ -192,7 +193,7 @@
 
 <p>
   <strong>用紙数:</strong>
-  <%= @et_report.c_sheet_count %>
+  <%= @et_report.c_sheet_count %>枚
 </p>
 
 <p>

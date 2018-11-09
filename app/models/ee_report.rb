@@ -44,7 +44,7 @@ class EeReport < ApplicationRecord
     errors[:base] << '一般入試の際は推薦形態を入力しないでください'
   end
   if  recommended_form == 2 and i_q_contents.blank?
-      "面接内容を入力してください"
+    errors[:base] <<"面接内容を入力してください"
   end
 end
 end
