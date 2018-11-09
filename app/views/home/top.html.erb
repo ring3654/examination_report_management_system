@@ -3,3 +3,33 @@
 <p><%= link_to '報告書の検索', home_retrieval_top_path %></p>
 <p><%= link_to 'ログインユーザ－一覧', users_path %></p>
 <p><%= link_to '報告書未承認一覧', unapproved_reports_index_path %></p>
+
+
+<h2>未承認一覧</h2>
+<table>
+  <thead>
+    <tr>
+      <th>受験者ID</th>
+      <th>学校名・企業名</th>
+    </tr>
+  </thead>
+
+  <div style="overflow: scroll; height: 10;">
+  <tbody>
+      <% @ee_reports.each do |ee_report| %>
+        <tr>
+          <td><%= ee_report.student_id %></td>
+          <td><%= ee_report.school_name %></td>
+          <td><%= link_to '閲覧', ee_report %></td>
+        </tr>
+      <% end %>
+      <% @et_reports.each do |et_report| %>
+          <tr>
+            <td><%= et_report.student_id %></td>
+            <td><%= et_report.office_name %></td>
+            <td><%= link_to '閲覧', et_report %></td>
+          </tr>
+        <% end %>
+  </tbody>
+  </div>
+</table>

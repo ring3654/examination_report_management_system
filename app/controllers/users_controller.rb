@@ -63,7 +63,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.all.order(:user_id)
+    @users = User.all.order(:user_id).page(params[:page]).per(PER)
     if params[:search][:annual].present?
       @users = @users.where("annual like '%" + params[:search][:annual] + "%' ").order(:user_id)      
     end

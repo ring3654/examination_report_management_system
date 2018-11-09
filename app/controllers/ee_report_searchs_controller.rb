@@ -20,6 +20,7 @@ class EeReportSearchsController < ApplicationController
     if params[:search][:street_address].present?
       @ee_reports = @ee_reports.where("street_address like '%" + params[:search][:street_address] + "%' ")    
     end
+    @ee_reports = @ee_reports.page(params[:page]).per(PER)
     render :index
   end
 
