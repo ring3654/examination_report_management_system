@@ -1,5 +1,6 @@
 class EeReportsController < ApplicationController
   before_action :set_ee_report, only: [:show, :edit, :update, :destroy]
+  before_action :login_check
 
   PER = 10
   # GET /ee_reports

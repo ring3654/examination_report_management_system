@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_action :login_check
+
   def retrieval_top
   end
   

@@ -1,4 +1,6 @@
 class EtReportSearchsController < ApplicationController
+  before_action :login_check
+
   def index
     @et_reports = EtReport.all
   end

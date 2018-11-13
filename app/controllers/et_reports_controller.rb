@@ -1,5 +1,6 @@
 class EtReportsController < ApplicationController
   before_action :set_et_report, only: [:show, :edit, :update, :destroy]
+  before_action :login_check
 
   # GET /et_reports
   # GET /et_reports.json

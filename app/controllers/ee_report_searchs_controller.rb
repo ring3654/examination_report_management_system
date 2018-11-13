@@ -1,4 +1,5 @@
 class EeReportSearchsController < ApplicationController
+  before_action :login_check
   PER = 10
 
 
