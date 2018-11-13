@@ -9,28 +9,32 @@
 <table>
   <thead>
     <tr>
-      <th>受験者ID</th>
-      <th>学校名・企業名</th>
+    <th width="40%">受験者ID</th>
+    <th width="40%">学校名・企業名</th>
+    <th width="20%"></th>
     </tr>
-  </thead>
+   </thead>
+  </table>
+ 
+ <div style="height:400px; overflow-y:scroll;">
+  <table>
 
-  <div style="overflow: scroll; height: 10;">
   <tbody>
       <% @ee_reports.each do |ee_report| %>
         <tr>
-          <td><%= ee_report.student_id %></td>
-          <td><%= ee_report.school_name %></td>
-          <td><%= link_to '閲覧', ee_report %></td>
+        <td width="40%"><%= ee_report.student_id %></td>
+        <td width="40%"><%= ee_report.school_name %></td>
+        <td width="20%"><%= link_to '閲覧', ee_report %></td>
         </tr>
       <% end %>
       <% @et_reports.each do |et_report| %>
           <tr>
           
-            <td><%= et_report.student_id %></td>
-            <td><%= et_report.office_name %></td>
-            <td><%= link_to '閲覧', et_report %></td>
+          <td width="40%"><%= et_report.student_id %></td>
+          <td width="40%"><%= et_report.office_name %></td>
+          <td width="20%"><%= link_to '閲覧', et_report %></td>
           </tr>
         <% end %>
-  </tbody>
-  </div>
-</table>
+   </tbody>
+  </table>
+ </div>
