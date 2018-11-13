@@ -49,9 +49,6 @@ class EtReportsController < ApplicationController
   # PATCH/PUT /et_reports/1
   # PATCH/PUT /et_reports/1.json
   def update
-    logger.debug("======")
-    logger.debug(params[:et_report][:i_image].original_filename)
-    logger.debug("======")
     if params[:et_report][:i_image].present?
         @et_report.i_image = params[:et_report][:i_image].original_filename
         
@@ -62,7 +59,7 @@ class EtReportsController < ApplicationController
 
     respond_to do |format|
       if @et_report.update(et_report_params)
-        format.html { redirect_to @et_report, notice: 'Et report was successfully updated.' }
+        format.html { redirect_to @et_report, notice: '更新が完了しました。' }
         format.json { render :show, status: :ok, location: @et_report }
       else
         format.html { render :edit }
@@ -76,7 +73,7 @@ class EtReportsController < ApplicationController
   def destroy
     @et_report.destroy
     respond_to do |format|
-      format.html { redirect_to et_reports_url, notice: 'Et report was successfully destroyed.' }
+      format.html { redirect_to et_reports_url, notice: '削除が完了しました。' }
       format.json { head :no_content }
     end
   end

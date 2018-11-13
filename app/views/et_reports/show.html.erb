@@ -47,7 +47,7 @@
 
 <p>
   <strong>郵便番号:</strong>
-  <%= @et_report.postal_code %>
+  〒<%= @et_report.postal_code %>
 </p>
 
 <p>
@@ -152,6 +152,14 @@
 
 <p>
   <strong>面接方法:</strong>
+  case i_method_one
+  when 1 then
+  i_method_one = "1人"
+  when 2 then
+　i_method_one = "複数"
+  when 3 then
+  i_method_one"集団討論"
+  end 
   <%= @et_report.i_method_one %>
 </p>
 
@@ -162,7 +170,7 @@
 
 <p>
   <strong>面接委員数:</strong>
-  <%= @et_report.judge_count %>
+  <%= @et_report.judge_count %>人
 </p>
 
 <p>
