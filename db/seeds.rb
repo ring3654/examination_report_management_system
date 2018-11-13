@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(user_id: 's20171401', name: '西郷隆盛', password: '123', flg: 0, annual: 2017, authority: 2)
 User.create(user_id: 's20171402', name: '西郷輝彦', password: '123', flg: 0, annual: 2017, authority: 2)
-User.create(user_id: 's20171403', name: '西郷どん', password: '123', flg: 0, annual: 2017, authority: 2)height="100"
+User.create(user_id: 's20171403', name: '西郷どん', password: '123', flg: 0, annual: 2017, authority: 2)
 User.create(user_id: 's20171404', name: '西郷吉見', password: '123', flg: 0, annual: 2017, authority: 2)
 User.create(user_id: 's20171405', name: '西郷輝美', password: '123', flg: 0, annual: 2017, authority: 2)
 User.create(user_id: 's20171406', name: '西郷西郷', password: '123', flg: 0, annual: 2017, authority: 2)

@@ -3,8 +3,9 @@ class HomeController < ApplicationController
   end
   
   def top
-    @ee_reports = EeReport.where(approval_flg: 0)
-    @et_reports = EtReport.where(approval_flg: 0)
+    @ee_reports = EeReport.where(student_id: session[:login_id],approval_flg: 0)
+    @et_reports = EtReport.where(student_id: session[:login_id],approval_flg: 0)
+
   end
 
 end

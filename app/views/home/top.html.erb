@@ -27,9 +27,9 @@
         <td width="20%"><%= link_to '閲覧', ee_report %></td>
         </tr>
       <% end %>
+
       <% @et_reports.each do |et_report| %>
           <tr>
-          
           <td width="40%"><%= et_report.student_id %></td>
           <td width="40%"><%= et_report.office_name %></td>
           <td width="20%"><%= link_to '閲覧', et_report %></td>

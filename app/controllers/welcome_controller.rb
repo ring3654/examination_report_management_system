@@ -11,6 +11,7 @@ class WelcomeController < ApplicationController
       user = User.find_by(user_id: @user_id)
       if user.present?
         if user.authenticate("#{password}")
+             session[:login_id] = user.user_id
              session[:login_user] = user.name
              redirect_to home_top_path
         else
