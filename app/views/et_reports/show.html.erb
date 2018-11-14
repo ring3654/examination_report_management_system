@@ -255,7 +255,12 @@
 
 <p>
   <strong>承認フラグ:</strong>
-  <%= @et_report.approval_flg %>
+  <% case @et_report.approval_flg %>
+  <% when 0 then %>
+  未承認
+  <% when 1 then %>
+  承認
+  <% end %>
   </p>
 
 <%= link_to '編集', edit_et_report_path(@et_report) %> |
