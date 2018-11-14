@@ -20,7 +20,15 @@ Rails.application.routes.draw do
       get :copy
     end
   end
-  resources :et_reports
-  resources :ee_reports
+  resources :et_reports do
+    member do
+      get :copy
+    end
+  end
+  resources :ee_reports do
+    member do
+      get :copy
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
