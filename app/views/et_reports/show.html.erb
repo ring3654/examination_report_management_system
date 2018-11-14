@@ -6,12 +6,12 @@
 </p>
 
 <p>
-  <strong>年:</strong>
+  <strong>組:</strong>
   <%= @et_report.student_class %>
 </p>
 
 <p>
-  <strong>組:</strong>
+  <strong>番号:</strong>
   <%= @et_report.student_number %>
 </p>
 
@@ -37,7 +37,12 @@
 
 <p>
   <strong>紹介番号:</strong>
-  <%= @et_report.introduction_number %>
+  <% case @et_report.introduction_number %>
+   <% when 1 then %>
+   学校斡旋
+   <% when 2 then %>
+   縁故
+   <% end %> 
 </p>
 
 <p>
@@ -72,37 +77,72 @@
 
 <p>
   <strong>選考方法:</strong>
-  <%= @et_report.selection_method %>
+  <% case @et_report.selection_method %>
+  <% when 1 then %>
+     一次
+  <% when 2 then %>
+     二次
+  <% end %>
 </p>
 
 <p>
   <strong>選考方法（筆記）:</strong>
-  <%= @et_report.s_method_writing %>
+  <% case @et_report.s_method_writing %>
+  <% when true then %>
+     有
+  <% when false then %>
+     無
+  <% end %>
 </p>
 
 <p>
   <strong>選考方法（適正）:</strong>
-  <%= @et_report.s_method_appropriate %>
+  <% case @et_report.s_method_appropriate %>
+  <% when true then %>
+     有
+  <% when false then %>
+     無
+  <% end %>
 </p>
 
 <p>
   <strong>選考方法（面接）:</strong>
-  <%= @et_report.s_method_interview %>
+  <% case @et_report.s_method_interview %>
+  <% when true then %>
+     有
+  <% when false then %>
+     無
+  <% end %>
 </p>
 
 <p>
   <strong>選考方法（作文）:</strong>
-  <%= @et_report.s_method_composition %>
+  <% case @et_report.s_method_composition %>
+  <% when true then %>
+     有
+  <% when false then %>
+     無
+  <% end %>
 </p>
 
 <p>
   <strong>選考方法（身体）:</strong>
-  <%= @et_report.s_method_physical %>
+  <% case @et_report.s_method_physical %>
+  <% when true then %>
+     有
+  <% when false then %>
+     無
+  <% end %>
 </p>
 
 <p>
   <strong>選考方法（その他）:</strong>
-  <%= @et_report.s_method_other %>
+  <% case @et_report.s_method_other %>
+  <% when true then %>
+     有
+  <% when false then %>
+     無
+  <% end %>
 </p>
 
 <p>
@@ -152,15 +192,14 @@
 
 <p>
   <strong>面接方法:</strong>
-  case i_method_one
-  when 1 then
-  i_method_one = "1人"
-  when 2 then
-　i_method_one = "複数"
-  when 3 then
-  i_method_one"集団討論"
-  end 
-  <%= @et_report.i_method_one %>
+  <% case @et_report.i_method_one %>
+  <% when 1 then %>
+    1人
+  <% when 2 then %>
+    複数
+  <% when 3 then %>
+    集団討論
+  <% end %>
 </p>
 
 <p>
@@ -189,7 +228,7 @@
 </p>
 
 <p>
-  <strong>面接画像:</strong>
+  <strong>面接の参考画像:</strong>
   <br>
   <%= image_tag "/images/#{@et_report.i_image}",width: 400 %>
 </p>
