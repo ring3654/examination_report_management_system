@@ -67,13 +67,33 @@
 
 <p>
   <strong>入試形態:</strong>
-  <%= @ee_report.entrance_form %>
-</p>
+  <% case @ee_report.entrance_form %>
+  <% when 1 then %>
+    一般入試
+  <% when 2 then %>
+    推薦入試
+    <% end %>
+  </p>
 
 <p>
   <strong>推薦入試形態:</strong>
-  <%= @ee_report.recommended_group %>
-</p>
+  <% case @ee_report.recommended_group %>
+  <% when 1 then %>
+    特別入試
+  <% when 2 then %>
+    指定校推薦
+  <% when 3 then %>
+    AO推薦
+  <% when 4 then %>
+    一般推薦
+  <% when 5 then %>
+    スポーツ推薦
+  <% when 6 then %>
+    自己推薦
+  <% when 7 then %>
+    その他の推薦
+    <% end %>
+    </p>
 
 <p>
   <strong>試験時間（国語）:</strong>
@@ -127,7 +147,18 @@
 
 <p>
   <strong>推薦形態:</strong>
-  <%= @ee_report.recommended_form %>
+  <% case @ee_report.recommended_form %>
+  <% when 1 then %>
+    書類選考のみ
+  <% when 2 then %>
+    「書類選考」＋「面接」
+  <% when 3 then %>
+    「書類選考」＋「面接」＋ 試験
+  <% when 4 then %>
+    「書類選考」＋「面接」＋ 小論文（作文）
+  <% when 5 then %>
+    「書類選考」＋「面接」＋ 小論文（作文）＋ 試験
+    <% end %>
 </p>
 
 <p>
@@ -158,7 +189,12 @@
 
 <p>
   <strong>承認フラグ:</strong>
-  <%= @ee_report.approval_flg %>
+  <% case @ee_report.approval_flg %>
+  <% when 0 then %>
+   未承認
+  <% when 1 then %>
+  　承認済み
+  <% end %>
 </p>
 
 
