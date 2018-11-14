@@ -79,6 +79,12 @@ class EtReportsController < ApplicationController
     end
   end
 
+  def copy
+    old_et_report = EtReport.find(params[:id])
+    @et_report = Etreport.new(old_et_report.attributes)
+    render :new
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_et_report
