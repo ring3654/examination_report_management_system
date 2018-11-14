@@ -56,10 +56,11 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'ユーザーを削除しました。' }
-      format.json { head :no_content }
+    @user.flg = 1
+    if @user.update
+      format.html { redirect_to @user, notice: 'ユーザーの削除が完了しました。' }
+    else
+      format.html { render :index }
     end
   end
 
