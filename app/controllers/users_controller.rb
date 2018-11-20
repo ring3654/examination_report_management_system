@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all.order(:user_id).page(params[:page]).per(PER)
+    @name = ""
+    @annual = ""
   end
 
   # GET /users/1
@@ -72,6 +74,8 @@ class UsersController < ApplicationController
     if params[:search][:name].present?
       @users = @users.where("name like '%" + params[:search][:name] + "%' ").order(:user_id)
   end
+    @name = params[:search][:name]
+    @annual = params[:search][:annual]
     render :index
   end
 

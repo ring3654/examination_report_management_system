@@ -31,13 +31,13 @@
   </thead>
 
   <tbody>
-    <% @ee_reports.each do |ee_report| %>
+    <% @ee_reports.each do |ee_report_search| %>
       <tr>
-        <td><%= ee_report.street_address.match(/.*[都道府県]/) %></td>
-        <td><%= ee_report.school_name %></td>
-        <td><%= ee_report.s_faculty_name %></td>
-        <td><%= ee_report.entrance_form %></td>
-        <td><%= link_to '詳細', ee_report_searchs_show_path %></td>
+        <td><%= ee_report_search.street_address.match(/.*[都道府県]/) %></td>
+        <td><%= ee_report_search.school_name %></td>
+        <td><%= ee_report_search.s_faculty_name %></td>
+        <td><%= ee_report_search.entrance_form %></td>
+        <td><%= link_to '詳細', ee_report_search %></td>
       </tr>
     <% end %>
     <%= paginate @ee_reports %>

@@ -8,6 +8,7 @@ class EeReportSearchsController < ApplicationController
   end
 
   def show
+    @ee_reports = EeReport.find(params[:id].to_i)
   end
 
   def search
