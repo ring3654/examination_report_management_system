@@ -7,12 +7,12 @@
  <p>
  名前（部分一致）
  <br>
- <%= text_field_tag 'search[name]' %>
+ <%= text_field_tag 'search[name]',@name %>
  </p>
  <p>
  年度
  <br>
- <%= text_field_tag 'search[annual]' %>
+ <%= text_field_tag 'search[annual]',@annual %>
  </p>
  <%= submit_tag '検索' %>
  <% end %>

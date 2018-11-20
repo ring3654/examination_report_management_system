@@ -264,4 +264,9 @@
   </p>
 
 <%= link_to '編集', edit_et_report_path(@et_report) %> |
-<%= link_to '戻る', et_reports_path %>
+<%= link_to '戻る', :back %> 
+<%= form_tag('output') do %>
+  <%= submit_tag '印刷' %>
+<% end %>
+
+
