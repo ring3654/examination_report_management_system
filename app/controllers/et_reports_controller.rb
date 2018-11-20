@@ -89,10 +89,18 @@ class EtReportsController < ApplicationController
     # ThinreportsでPDFを作成
     # Editorで作ったtlfファイルを読み込む
     # 1ページ目
-    report = ThinReports::Report.new(layout: "#{Rails.root}/app/views/就職試験受験報告書.tlf")
+    report = ThinReports::Report.new(layout: "#{Rails.root}/app/views/et_reports/test.tlf")
     report.start_new_page
-    report.page.item(:title).value("ドキュメントタイトル")
-
+    report.page.item(:office_name).value("ドキュメントタイトル")
+    # PDFファイルのバイナリデータを生成する
+    file = report.generate
+      # ブラウザでPDFを表示させたい場合
+    # パラメタのdisposition: "inline" をつけない場合は、PDFがダウンロードされる
+    send_data(
+      file,
+      filename: "filename_sample.pdf",
+      type: "application/pdf",
+      disposition: "inline")
   end
 
   private
