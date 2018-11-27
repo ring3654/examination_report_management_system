@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/users_search', to: 'users#search' 
   get 'home/report_top'
   get 'home/top'
+  delete :users, to: 'users#destroy_all'
   resources :ee_report_searchs do
   end
   resources :et_report_searchs do

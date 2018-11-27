@@ -85,6 +85,28 @@ class UsersController < ApplicationController
     render :new
     end
 
+    def destroy_all
+      #�`�F�b�N�������[�U�[��ID�����邽�߂́uchecked_data�v�Ƃ�����̔z��ƁA�폜�������[�U�[���J�E���g���邽�߂̕ϐ��uuser_count�v�i�����l��0�j���쐬
+  
+      #�`�F�b�N�{�b�N�X�Ń`�F�b�N�������[�U�[��ID�������Ă���params[:deletes]�����݂��Ă���΁A�l�ikey�j�����o���āuchecked_data�v�ɑ��
+      checked_data = params[:deletes].keys if params[:deletes].present?
+  
+      #�uchecked_data�v�̐�����User���f����id����v����f�[�^���擾
+      user = User.where(id: checked_data)
+  
+      #�������[�U���X�V�o������
+      if user.update_all(flg: 1)
+        #user_count��checked_data�̒l�̐�����
+  
+      end
+  
+      #user��index��redirect_to�ŉ�ʑJ�ڂ���B�J�ڌ�A�u�����̃��[�U�[���폜���܂����B�v�ƃ��b�Z�[�W���\������悤�ɂ���B
+  
+    end
+
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
