@@ -57,14 +57,6 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   # DELETE /users/1.json
-  def destroy
-    @user.flg = 1
-    if @user.update
-      format.html { redirect_to @user, notice: 'ユーザーの削除が完了しました。' }
-    else
-      format.html { render :index }
-    end
-  end
 
   def search
     @users = User.all.order(:user_id).page(params[:page]).per(PER)
@@ -84,6 +76,14 @@ class UsersController < ApplicationController
     @user = User.new(old_user.attributes)
     render :new
     end
+  def destroy
+    @user.flg = 1
+    if @user.update
+      format.html { redirect_to @user, notice: 'ユーザーの削除が完了しました。' }
+    else
+      format.html { render :index }
+    end
+  end
 
     def destroy_all
       #�`�F�b�N�������[�U�[��ID�����邽�߂́uchecked_data�v�Ƃ�����̔z��ƁA�폜�������[�U�[���J�E���g���邽�߂̕ϐ��uuser_count�v�i�����l��0�j���쐬
