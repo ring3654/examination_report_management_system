@@ -5,8 +5,6 @@ class EtReportSearchsController < ApplicationController
     @et_reports = EtReport.all
   end
 
-  def show
-  end
 
   def search
     @et_reports = EtReport.all

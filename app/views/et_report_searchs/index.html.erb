@@ -35,12 +35,12 @@
   </thead>
 
   <tbody>
-    <% @et_reports.each do |et_report| %>
+    <% @et_reports.each do |et_report_search| %>
       <tr> 
-        <td><%= et_report.street_address.match(/.*[都道府県]/) %></td>
-        <td><%= et_report.job_category %></td>
-        <td><%= et_report.office_name %></td>
-        <td><%= link_to '詳細', et_report_path(et_report) %></td>
+        <td><%= et_report_search.street_address.match(/.*[都道府県]/) %></td>
+        <td><%= et_report_search.job_category %></td>
+        <td><%= et_report_search.office_name %></td>
+        <td><%= link_to '詳細', et_report_search %></td>
       </tr>
     <% end %>
   </tbody>
