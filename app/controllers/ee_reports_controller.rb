@@ -34,11 +34,11 @@ class EeReportsController < ApplicationController
       File.open("public/images/#{@ee_report.g_q_image}",'wb') { |f|f.write(params[:ee_report][:g_q_image].read)}
     end  
 
-  if params[:ee_report][:i_q_images].present?
-    @ee_report.i_q_images = params[:ee_report][:i_q_images].original_filename
+    if params[:ee_report][:i_q_images].present?
+      @ee_report.i_q_images = params[:ee_report][:i_q_images].original_filename
 
-    File.open("public/images/#{@ee_report.i_q_images}",'wb') { |f|f.write(params[:ee_report][:i_q_images].read)}
-  end
+      File.open("public/images/#{@ee_report.i_q_images}",'wb') { |f|f.write(params[:ee_report][:i_q_images].read)}
+    end
     respond_to do |format|
       if @ee_report.save
         format.html { redirect_to @ee_report, notice: 'Ee report was successfully created.' }
@@ -66,7 +66,7 @@ class EeReportsController < ApplicationController
     end
     params[:ee_report][:g_q_image] = params[:ee_report][:g_q_image].original_filename
     params[:ee_report][:i_q_images] = params[:ee_report][:i_q_images].original_filename
-
+    
     respond_to do |format|
       if @ee_report.update(ee_report_params)
         format.html { redirect_to @ee_report, notice: 'Ee report was successfully updated.' }
@@ -77,7 +77,7 @@ class EeReportsController < ApplicationController
       end
     end
   end
-
+    
   # DELETE /ee_reports/1
   # DELETE /ee_reports/1.json
   def destroy
@@ -87,21 +87,40 @@ class EeReportsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+    
   def copy
     old_ee_report = EeReport.find(params[:id])
     @ee_report = EeReport.new(old_ee_report.attributes)
     render :new
-    end
-
+  end
+  
+  def output
+    # ThinreportsでPDFを作成
+    # Editorで作ったtlfファイルを読み込む
+    # 1ページ目
+    report = Thinreports::Report.new(layout: "#{Rails.root}/app/views/ee_reports/入学試験受験報告書.tlf")
+    report.start_new_page
+    report.page.item(:school_name).value("ドキュメントタイトル")
+    # PDFファイルのバイナリデータを生成する
+    file = report.generate
+    # ブラウザでPDFを表示させたい場合
+    # パラメタのdisposition: "inline" をつけない場合は、PDFがダウンロードされる
+    send_data(
+      file,
+      filename: "filename_sample.pdf",
+      type: "application/pdf",
+      disposition: "inline")
+  end
+  
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ee_report
+  # Use callbacks to share common setup or constraints between actions.
+  def set_ee_report
       @ee_report = EeReport.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def ee_report_params
-      params.require(:ee_report).permit(:reporting_date, :student_class, :student_number, :student_id, :school_name, :s_faculty_name, :s_department_name, :s_course_name, :test_day, :postal_code, :street_address, :examination_hall, :result_publication_date, :entrance_form, :recommended_group,:t_subject_japanese,:t_subject_math,:t_subject_society,:t_subject_science,:t_subject_english,:t_subject_other,:t_subject_other_time,:g_q_contents,:g_q_image,:g_impressions,:recommended_form,:i_q_contents,:i_q_images,:e_contents,:w_contents,:r_impression,:approval_flg)
-    end
+  end
+    
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def ee_report_params
+    params.require(:ee_report).permit(:reporting_date, :student_class, :student_number, :student_id, :school_name, :s_faculty_name, :s_department_name, :s_course_name, :test_day, :postal_code, :street_address, :examination_hall, :result_publication_date, :entrance_form, :recommended_group,:t_subject_japanese,:t_subject_math,:t_subject_society,:t_subject_science,:t_subject_english,:t_subject_other,:t_subject_other_time,:g_q_contents,:g_q_image,:g_impressions,:recommended_form,:i_q_contents,:i_q_images,:e_contents,:w_contents,:r_impression,:approval_flg)
+  end
+  
 end

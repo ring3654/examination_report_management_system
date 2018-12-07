@@ -7,10 +7,6 @@ class EeReportSearchsController < ApplicationController
     @ee_reports = EeReport.all.page(params[:page]).per(PER)
   end
 
-  def show
-    @ee_reports = EeReport.find(params[:id].to_i)
-  end
-
   def search
     @ee_reports = EeReport.all
     if params[:search][:school_name].present?
