@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all.order(:user_id).page(params[:page]).per(PER)
+    @users = User.where(flg: 0).order(:user_id).page(params[:page]).per(PER)
     @name = ""
     @annual = ""
   end
@@ -76,6 +76,7 @@ class UsersController < ApplicationController
     @user = User.new(old_user.attributes)
     render :new
     end
+
   def destroy
     @user.flg = 1
     if @user.update
@@ -85,25 +86,25 @@ class UsersController < ApplicationController
     end
   end
 
-    def destroy_all
-      #�`�F�b�N�������[�U�[��ID�����邽�߂́uchecked_data�v�Ƃ�����̔z��ƁA�폜�������[�U�[���J�E���g���邽�߂̕ϐ��uuser_count�v�i�����l��0�j���쐬
-  
-      #�`�F�b�N�{�b�N�X�Ń`�F�b�N�������[�U�[��ID�������Ă���params[:deletes]�����݂��Ă���΁A�l�ikey�j�����o���āuchecked_data�v�ɑ��
-      checked_data = params[:deletes].keys if params[:deletes].present?
-  
-      #�uchecked_data�v�̐�����User���f����id����v����f�[�^���擾
-      user = User.where(id: checked_data)
-  
-      #�������[�U���X�V�o������
-      if user.update_all(flg: 1)
-        #user_count��checked_data�̒l�̐�����
-  
-      end
-  
-      #user��index��redirect_to�ŉ�ʑJ�ڂ���B�J�ڌ�A�u�����̃��[�U�[���폜���܂����B�v�ƃ��b�Z�[�W���\������悤�ɂ���B
-  
+  def destroy_all
+    #チェックしたユーザーのIDを入れるための「checked_data」という空の配列と、削除したユーザーをカウントするための変数「user_count」（初期値は0）を作成
+     checked_data = []
+     user_count = 0   
+    #チェックボックスでチェックしたユーザーのIDが入っているparams[:deletes]が存在していれば、値（key）を取り出して「checked_data」に代入
+    checked_data = params[:deletes].keys if params[:deletes].present?
+
+    #「checked_data」の数字とUserモデルのidが一致するデータを取得
+    user = User.where(id: checked_data)
+
+    #もしユーザが更新出来たら
+    if user.update_all(flg: 1)
+      #user_countにchecked_dataの値の数を代入
+       user_count = checked_data.size
     end
 
+    #userのindexにredirect_toで画面遷移する。遷移後、「○件のユーザーを削除しました。」とメッセージが表示するようにする。
+    redirect_to users_path, notice: "#{user_count}件のユーザーを削除しました。" 
+  end
 
 
 
