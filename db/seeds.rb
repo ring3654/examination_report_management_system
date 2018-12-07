@@ -18,6 +18,8 @@ User.create(id: 19, user_id: 's20171410', name: '西郷の犬', password: '123',
 User.create(id: 20, user_id: 's20171411', name: '西郷ふぁ', password: '123', flg: 0, annual: 2017, authority: 2)
 User.create(id: 21, user_id: 's20171412', name: '西郷だドン', password: '123', flg: 0, annual: 2017, authority: 2)
 User.create(id: 22, user_id: 's20171413', name: '西郷だぜぇ', password: '123', flg: 0, annual: 2017, authority: 2)
+User.create(id: 23, user_id: 't201701', name: '吉村先生', password: '123', flg: 0, annual: 2017, authority: 1)
+
 
 EeReport.create(id: 10, reporting_date: '2018-09-01', student_class: 4, student_number: 1, student_id: 's20171401', school_name: '出雲大学', s_faculty_name: '理学部', s_department_name: '理学科', test_day: '2018-08-19', postal_code: 6990513, street_address: '島根県出雲市大津2525', examination_hall: '貴校', result_publication_date: '2018-08-20', entrance_form: 2, r_self: true, t_subject_japanese: 50, t_subject_math: 50, t_subject_society: 50, t_subject_science: 50, t_subject_english: 50, g_q_contents: 'とても難しかったです', g_impressions: '疲れました', recommended_form: 1, approval_flg: 0)
 EeReport.create(id: 11, reporting_date: '2018-09-01', student_class: 4, student_number: 2, student_id: 's20171402', school_name: '山大学', s_faculty_name: '法学部', s_department_name: '法学科', test_day: '2018-08-19', postal_code: 6990513, street_address: '島根県松江市大津2525', examination_hall: '貴校', result_publication_date: '2018-08-20', entrance_form: 2, r_self: true, t_subject_japanese: 50, t_subject_math: 50, t_subject_society: 50, t_subject_science: 50, t_subject_english: 50, g_q_contents: '簡単です', g_impressions: '疲れました', recommended_form: 1, approval_flg: 1)
