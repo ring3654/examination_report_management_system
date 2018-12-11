@@ -121,8 +121,15 @@ class EeReportsController < ApplicationController
     report.page.item(:t_subject_english).value(ee_report.t_subject_english)
     report.page.item(:t_subject_other).value(ee_report.t_subject_other)
     report.page.item(:t_subject_other_time).value(ee_report.t_subject_other_time)
-    report.page.item(:g_q_contents).value(ee_report.g_q_contents)
+    report.page.item(:g_q_image).value(ee_report.g_q_image)
     report.page.item(:g_impressions).value(ee_report.g_impressions)
+    # 3 ページ目
+    report.start_new_page layout: "#{Rails.root}/app/views/ee_reports/入学試験受験報告書_裏.tlf"
+    report.page.item(:recommended_form).value(ee_report.recommended_form)
+    report.page.item(:i_q_contents).value(ee_report.i_q_contents)
+    report.page.item(:e_contents).value(ee_report.e_contents)
+    report.page.item(:w_contents).value(ee_report.w_contents)
+    report.page.item(:r_impression).value(ee_report.r_impression)
 
     # PDFファイルのバイナリデータを生成する
     file = report.generate
