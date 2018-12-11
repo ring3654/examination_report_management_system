@@ -98,9 +98,32 @@ class EeReportsController < ApplicationController
     # ThinreportsでPDFを作成
     # Editorで作ったtlfファイルを読み込む
     # 1ページ目
+    ee_report = EeReport.find(params[:output_id])
     report = Thinreports::Report.new(layout: "#{Rails.root}/app/views/ee_reports/入学試験受験報告書.tlf")
     report.start_new_page
-    report.page.item(:school_name).value("ドキュメントタイトル")
+    report.page.item(:reporting_date).value(ee_report.reporting_date.strftime("%Y年%m月%d日") )
+    report.page.item(:student_class).value(ee_report.student_class)
+    report.page.item(:student_number).value(ee_report.student_number)
+    report.page.item(:student_id).value(ee_report.student_id)
+    report.page.item(:school_name).value(ee_report.school_name)
+    report.page.item(:s_faculty_name).value(ee_report.s_faculty_name)
+    report.page.item(:s_department_name).value(ee_report.s_department_name)
+    report.page.item(:s_course_name).value(ee_report.s_course_name)
+    report.page.item(:street_addresstext).value(ee_report.street_address)
+    report.page.item(:test_day).value(ee_report.test_day.strftime("%Y年%m月%d日") )
+    report.page.item(:examination_hall).value(ee_report.examination_hall)
+    report.page.item(:result_publication_date).value(ee_report.result_publication_date.strftime("%Y年%m月%d日") )
+    report.page.item(:recommended_group).value(ee_report.recommended_group)
+    report.page.item(:t_subject_japanese).value(ee_report.t_subject_japanese)
+    report.page.item(:t_subject_math).value(ee_report.t_subject_math)
+    report.page.item(:t_subject_society).value(ee_report.t_subject_society)
+    report.page.item(:t_subject_science).value(ee_report.t_subject_science)
+    report.page.item(:t_subject_english).value(ee_report.t_subject_english)
+    report.page.item(:t_subject_other).value(ee_report.t_subject_other)
+    report.page.item(:t_subject_other_time).value(ee_report.t_subject_other_time)
+    report.page.item(:g_q_contents).value(ee_report.g_q_contents)
+    report.page.item(:g_impressions).value(ee_report.g_impressions)
+
     # PDFファイルのバイナリデータを生成する
     file = report.generate
     # ブラウザでPDFを表示させたい場合
