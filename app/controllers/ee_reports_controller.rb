@@ -136,7 +136,11 @@ class EeReportsController < ApplicationController
   end
   
   def approval
-    
+    logger.debug("-----------------")
+    logger.debug(params)
+    logger.debug("-----------------") 
+    ee_report = EeReport.find(params[:approval_id])
+    ee_report.update(approval_flg: 1)
     redirect_to unapproved_reports_index_path, notice: "承認しました。" 
   end
 
