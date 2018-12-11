@@ -202,6 +202,7 @@
 <%= link_to '戻る', :back %>
 <%= form_tag('/ee_reports/output') do %>
   <%= submit_tag '印刷' %>
+  <%= hidden_field_tag "output_id", @ee_report.id %>
 <% end %>
 <%= form_tag('/ee_reports/approval') do %>
   <%= submit_tag '承認' %>
