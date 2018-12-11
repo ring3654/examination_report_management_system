@@ -86,12 +86,53 @@ class EtReportsController < ApplicationController
     end
 
   def output
+    et_report = EtReport.find(params[:output_id])
     # ThinreportsでPDFを作成
     # Editorで作ったtlfファイルを読み込む
     # 1ページ目
-    report = Thinreports::Report.new(layout: "#{Rails.root}/app/views/et_reports/就職試験報告書　表.tlf")
+    report = Thinreports::Report.new(layout: "#{Rails.root}/app/views/et_reports/就職試験報告書_表.tlf")
     report.start_new_page
-    report.page.item(:office_name).value("ドキュメントタイトル")
+    report.page.item(:reporting_date).value(et_report.reporting_date.strftime("%Y年%m月%d日") )
+    report.page.item(:student_class).value(et_report.student_class)
+    report.page.item(:student_number).value(et_report.student_number)
+    report.page.item(:student_id).value(et_report.student_id)
+    report.page.item(:office_name).value(et_report.office_name)
+    report.page.item(:job_category).value(et_report.job_category)
+    report.page.item(:job_vote_number).value(et_report.job_vote_number)
+    report.page.item(:introduction_number).value(et_report.introduction_number)
+    report.page.item(:street_address).value(et_report.street_address)
+    report.page.item(:test_day).value(et_report.test_day.strftime("%Y年%m月%d日") )
+    report.page.item(:examination_hall).value(et_report.examination_hall)
+    report.page.item(:examinees_count_man).value(et_report.examinees_count_man)
+    report.page.item(:examinees_count_woman).value(et_report.examinees_count_woman)
+    report.page.item(:s_method_writing).value(et_report.s_method_writing)
+    report.page.item(:s_method_appropriate).value(et_report.s_method_appropriate)
+    report.page.item(:s_method_interview).value(et_report.s_method_interview)
+    report.page.item(:s_method_composition).value(et_report.s_method_composition)
+    report.page.item(:s_method_physical).value(et_report.s_method_physical)
+    report.page.item(:s_method_other).value(et_report.s_method_other)
+    report.page.item(:t_subject_japanese).value(et_report.t_subject_japanese)
+    report.page.item(:t_subject_math).value(et_report.t_subject_math)
+    report.page.item(:t_subject_society).value(et_report.t_subject_society)
+    report.page.item(:t_subject_science).value(et_report.t_subject_science)
+    report.page.item(:t_subject_english).value(et_report.t_subject_english)
+    report.page.item(:t_subject_other_name).value(et_report.t_subject_other_name)
+    report.page.item(:t_subject_other_time).value(et_report.t_subject_other_time)
+    report.page.item(:t_subject_general).value(et_report.t_subject_general)
+    report.page.item(:t_subject_aptitude).value(et_report.t_subject_aptitude)
+    report.page.item(:i_method_one).value(et_report.i_method_one)
+    report.page.item(:judge_count).value(et_report.judge_count)
+    report.page.item(:i_time).value(et_report.i_time)
+    report.page.item(:i_other).value(et_report.i_other)
+    report.page.item(:i_contents).value(et_report.i_contents)
+    report.page.item(:composition_title).value(et_report.composition_title)
+    report.page.item(:c_sheet_count).value(et_report.c_sheet_count)
+
+   #2ページ目
+   report.start_new_page layout: "#{Rails.root}/app/views/et_reports/就職試験報告書_裏.tlf"
+   report.page.item(:writing_test_contents).value(et_report.writing_test_contents)
+   report.page.item(:other_coment).value(et_report.other_coment)
+    
     # PDFファイルのバイナリデータを生成する
     file = report.generate
       # ブラウザでPDFを表示させたい場合
@@ -99,8 +140,8 @@ class EtReportsController < ApplicationController
     send_data(
       file,
       filename: "filename_sample.pdf",
-      type: "application/pdf",
-      disposition: "inline")
+      type: "application/pdf"
+      )
   end
 
   private
