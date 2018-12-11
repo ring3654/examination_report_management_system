@@ -269,5 +269,6 @@
   <%= hidden_field_tag "output_id", @et_report.id %>
   <%= submit_tag '印刷' %>
 <% end %>
-
-
+<%= form_tag('/et_reports/approval') do %>
+  <%= submit_tag '承認' %>
+<% end %>

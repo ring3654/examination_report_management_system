@@ -98,9 +98,39 @@ class EeReportsController < ApplicationController
     # ThinreportsでPDFを作成
     # Editorで作ったtlfファイルを読み込む
     # 1ページ目
+    ee_report = EeReport.find(params[:output_id])
     report = Thinreports::Report.new(layout: "#{Rails.root}/app/views/ee_reports/入学試験受験報告書.tlf")
     report.start_new_page
-    report.page.item(:school_name).value("ドキュメントタイトル")
+    report.page.item(:reporting_date).value(ee_report.reporting_date.strftime("%Y年%m月%d日") )
+    report.page.item(:student_class).value(ee_report.student_class)
+    report.page.item(:student_number).value(ee_report.student_number)
+    report.page.item(:student_id).value(ee_report.student_id)
+    report.page.item(:school_name).value(ee_report.school_name)
+    report.page.item(:s_faculty_name).value(ee_report.s_faculty_name)
+    report.page.item(:s_department_name).value(ee_report.s_department_name)
+    report.page.item(:s_course_name).value(ee_report.s_course_name)
+    report.page.item(:street_addresstext).value(ee_report.street_address)
+    report.page.item(:test_day).value(ee_report.test_day.strftime("%Y年%m月%d日") )
+    report.page.item(:examination_hall).value(ee_report.examination_hall)
+    report.page.item(:result_publication_date).value(ee_report.result_publication_date.strftime("%Y年%m月%d日") )
+    report.page.item(:recommended_group).value(ee_report.recommended_group)
+    report.page.item(:t_subject_japanese).value(ee_report.t_subject_japanese)
+    report.page.item(:t_subject_math).value(ee_report.t_subject_math)
+    report.page.item(:t_subject_society).value(ee_report.t_subject_society)
+    report.page.item(:t_subject_science).value(ee_report.t_subject_science)
+    report.page.item(:t_subject_english).value(ee_report.t_subject_english)
+    report.page.item(:t_subject_other).value(ee_report.t_subject_other)
+    report.page.item(:t_subject_other_time).value(ee_report.t_subject_other_time)
+    report.page.item(:g_q_image).value(ee_report.g_q_image)
+    report.page.item(:g_impressions).value(ee_report.g_impressions)
+    # 3 ページ目
+    report.start_new_page layout: "#{Rails.root}/app/views/ee_reports/入学試験受験報告書_裏.tlf"
+    report.page.item(:recommended_form).value(ee_report.recommended_form)
+    report.page.item(:i_q_contents).value(ee_report.i_q_contents)
+    report.page.item(:e_contents).value(ee_report.e_contents)
+    report.page.item(:w_contents).value(ee_report.w_contents)
+    report.page.item(:r_impression).value(ee_report.r_impression)
+
     # PDFファイルのバイナリデータを生成する
     file = report.generate
     # ブラウザでPDFを表示させたい場合
@@ -112,6 +142,15 @@ class EeReportsController < ApplicationController
       disposition: "inline")
   end
   
+  def approval
+    logger.debug("-----------------")
+    logger.debug(params)
+    logger.debug("-----------------") 
+    ee_report = EeReport.find(params[:approval_id])
+    ee_report.update(approval_flg: 1)
+    redirect_to unapproved_reports_index_path, notice: "承認しました。" 
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_ee_report
