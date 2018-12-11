@@ -142,6 +142,15 @@ class EeReportsController < ApplicationController
       disposition: "inline")
   end
   
+  def approval
+    logger.debug("-----------------")
+    logger.debug(params)
+    logger.debug("-----------------") 
+    ee_report = EeReport.find(params[:approval_id])
+    ee_report.update(approval_flg: 1)
+    redirect_to unapproved_reports_index_path, notice: "承認しました。" 
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_ee_report
