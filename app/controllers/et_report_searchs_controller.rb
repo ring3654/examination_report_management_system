@@ -5,7 +5,7 @@ class EtReportSearchsController < ApplicationController
 
 
   def index
-    @et_reports = EtReport.all.page(params[:page]).per(PER)
+    @et_reports = EtReport.where(approval_flg: 1).page(params[:page]).per(PER)
   end
 
 

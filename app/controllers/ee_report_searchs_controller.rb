@@ -5,7 +5,7 @@ class EeReportSearchsController < ApplicationController
 
 
   def index
-    @ee_reports = EeReport.all.page(params[:page]).per(PER)
+    @ee_reports = EeReport.where(approval_flg: 1).page(params[:page]).per(PER)
   end
 
   def search
