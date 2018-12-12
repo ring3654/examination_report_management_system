@@ -1,8 +1,11 @@
 class EtReportSearchsController < ApplicationController
   before_action :login_check
+  before_action :before_controller_check
+  PER = 10
+
 
   def index
-    @et_reports = EtReport.all
+    @et_reports = EtReport.all.page(params[:page]).per(PER)
   end
 
 
@@ -20,6 +23,7 @@ class EtReportSearchsController < ApplicationController
     if params[:search][:street_address].present?
       @et_reports = @et_reports.where("street_address like '%" + params[:search][:street_address] + "%' ")    
     end
+    @et_reports = @et_reports.page(params[:page]).per(PER)
     render :index
   end
 
