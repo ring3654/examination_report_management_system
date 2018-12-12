@@ -105,6 +105,7 @@ class EtReportsController < ApplicationController
     report.page.item(:examination_hall).value(et_report.examination_hall)
     report.page.item(:examinees_count_man).value(et_report.examinees_count_man)
     report.page.item(:examinees_count_woman).value(et_report.examinees_count_woman)
+    report.page.item(:examinees_count_total).value("#{et_report.examinees_count_man + et_report.examinees_count_woman}")
     report.page.item(:s_method_writing).value(et_report.s_method_writing)
     report.page.item(:s_method_appropriate).value(et_report.s_method_appropriate)
     report.page.item(:s_method_interview).value(et_report.s_method_interview)
@@ -125,6 +126,7 @@ class EtReportsController < ApplicationController
     report.page.item(:i_time).value(et_report.i_time)
     report.page.item(:i_other).value(et_report.i_other)
     report.page.item(:i_contents).value(et_report.i_contents)
+    report.page.item(:i_image).value("#{Rails.root}/public/images/#{et_report.i_image}")
     report.page.item(:composition_title).value(et_report.composition_title)
     report.page.item(:c_sheet_count).value(et_report.c_sheet_count)
 
@@ -139,7 +141,7 @@ class EtReportsController < ApplicationController
     # パラメタのdisposition: "inline" をつけない場合は、PDFがダウンロードされる
     send_data(
       file,
-      filename: "filename_sample.pdf",
+      filename: "就職試験報告書_#{et_report.office_name}.pdf",
       type: "application/pdf"
       )
   end

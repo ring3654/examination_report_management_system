@@ -6,7 +6,7 @@
       "type": "rect",
       "display": true,
       "description": "",
-      "x": 20.6,
+      "x": 59.5,
       "y": 51.8,
       "width": 515.7,
       "height": 770,
@@ -28,9 +28,9 @@
         "border-width": 1,
         "border-style": "solid"
       },
-      "x1": 20,
+      "x1": 59.5,
       "y1": 90,
-      "x2": 535.7,
+      "x2": 575.2,
       "y2": 90
     },
     {
@@ -38,8 +38,8 @@
       "type": "text",
       "display": true,
       "description": "",
-      "x": 35.6,
-      "y": 63,
+      "x": 87.6,
+      "y": 62,
       "width": 199.9,
       "height": 22,
       "style": {
@@ -69,9 +69,9 @@
         "border-width": 1,
         "border-style": "solid"
       },
-      "x1": 20.6,
+      "x1": 59.5,
       "y1": 600,
-      "x2": 536.3,
+      "x2": 575.2,
       "y2": 600
     },
     {
@@ -79,10 +79,10 @@
       "type": "text",
       "display": true,
       "description": "",
-      "x": 31.6,
-      "y": 601,
-      "width": 527.8,
-      "height": 100,
+      "x": 67.4,
+      "y": 604,
+      "width": 496.2,
+      "height": 20,
       "style": {
         "font-family": [
           "Helvetica"
@@ -105,9 +105,9 @@
       "type": "text",
       "display": true,
       "description": "",
-      "x": 226.6,
+      "x": 302.6,
       "y": 65.5,
-      "width": 323.9,
+      "width": 257,
       "height": 20.5,
       "style": {
         "font-family": [
@@ -131,7 +131,7 @@
       "type": "text-block",
       "display": true,
       "description": "",
-      "x": 40.1,
+      "x": 73.1,
       "y": 111.5,
       "width": 475,
       "height": 467.5,
@@ -163,8 +163,8 @@
       "type": "text-block",
       "display": true,
       "description": "",
-      "x": 41.1,
-      "y": 633,
+      "x": 73.1,
+      "y": 630,
       "width": 465,
       "height": 167,
       "style": {
@@ -195,11 +195,11 @@
     "layout-guides": [
       {
         "type": "x",
-        "position": 20.6
+        "position": 11.6
       },
       {
         "type": "y",
-        "position": 467
+        "position": 184.5
       }
     ]
   },
