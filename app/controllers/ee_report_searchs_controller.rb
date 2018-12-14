@@ -1,10 +1,11 @@
 class EeReportSearchsController < ApplicationController
   before_action :login_check
+  before_action :before_controller_check
   PER = 10
 
 
   def index
-    @ee_reports = EeReport.all.page(params[:page]).per(PER)
+    @ee_reports = EeReport.where(approval_flg: 1).page(params[:page]).per(PER)
   end
 
   def search

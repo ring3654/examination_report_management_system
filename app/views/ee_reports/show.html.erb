@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>報告年月日:</strong>
   <%= @ee_report.reporting_date.strftime("%Y年%m月%d日") %>
@@ -196,7 +195,6 @@
   　承認済み
   <% end %>
 </p>
-
 
 <%= link_to '編集', edit_ee_report_path(@ee_report) %> |
 <%= link_to '戻る', home_top_path %>
