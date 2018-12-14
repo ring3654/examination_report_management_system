@@ -121,12 +121,27 @@ class EeReportsController < ApplicationController
     report.page.item(:t_subject_english).value(ee_report.t_subject_english)
     report.page.item(:t_subject_other).value(ee_report.t_subject_other)
     report.page.item(:t_subject_other_time).value(ee_report.t_subject_other_time)
-    report.page.item(:g_q_image).value(ee_report.g_q_image)
+    report.page.item(:g_q_contents).value(ee_report.g_q_contents)
+    report.page.item(:g_q_image).value("public/images/#{ee_report.g_q_image}")
     report.page.item(:g_impressions).value(ee_report.g_impressions)
     # 3 ページ目
     report.start_new_page layout: "#{Rails.root}/app/views/ee_reports/入学試験受験報告書_裏.tlf"
+    # case ee_report.recommended_form 
+    #  when 1 then 
+    #   書類選考のみ
+    #  when 2 then 
+    #   「書類選考」＋「面接」
+    # when 3 then 
+    #   「書類選考」＋「面接」＋ 試験
+    #  when 4 then
+    #   「書類選考」＋「面接」＋ 小論文（作文）
+    #  when 5 then
+    #   「書類選考」＋「面接」＋ 小論文（作文）＋ 試験
+    # end
+  
     report.page.item(:recommended_form).value(ee_report.recommended_form)
     report.page.item(:i_q_contents).value(ee_report.i_q_contents)
+    report.page.item(:i_q_images).value("public/images/#{ee_report.i_q_images}")
     report.page.item(:e_contents).value(ee_report.e_contents)
     report.page.item(:w_contents).value(ee_report.w_contents)
     report.page.item(:r_impression).value(ee_report.r_impression)
@@ -137,9 +152,9 @@ class EeReportsController < ApplicationController
     # パラメタのdisposition: "inline" をつけない場合は、PDFがダウンロードされる
     send_data(
       file,
-      filename: "filename_sample.pdf",
-      type: "application/pdf",
-      disposition: "inline")
+      filename: "入学試験受験報告書_#{ee_report.s_faculty_name}_#{ee_report.s_department_name}_#{ee_report.s_course_name}.pdf",
+      type: "application/pdf"
+    )
   end
   
   def approval
