@@ -265,11 +265,11 @@
 
 <%= link_to '編集', edit_et_report_path(@et_report) %> |
 <%= link_to '戻る', :back %> 
-<% if @path[:controller] == "unapproved_reports" %>
   <%= form_tag('/et_reports/output') do %>
     <%= hidden_field_tag "output_id", @et_report.id %>
     <%= submit_tag '印刷' %>
   <% end %>
+<% if @path[:controller] == "unapproved_reports" %>
   <%= form_tag('/et_reports/approval') do %>
     <%= submit_tag '承認' %>
   <% end %>
