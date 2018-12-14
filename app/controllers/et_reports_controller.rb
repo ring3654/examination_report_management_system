@@ -99,19 +99,68 @@ class EtReportsController < ApplicationController
     report.page.item(:office_name).value(et_report.office_name)
     report.page.item(:job_category).value(et_report.job_category)
     report.page.item(:job_vote_number).value(et_report.job_vote_number)
-    report.page.item(:introduction_number).value(et_report.introduction_number)
+    case et_report.introduction_number 
+    when 1 
+      introduction = "学校斡旋"
+    when 2 
+      introduction = "縁故"
+    end
+    report.page.item(:introduction_number).value(introduction)
     report.page.item(:street_address).value(et_report.street_address)
     report.page.item(:test_day).value(et_report.test_day.strftime("%Y年%m月%d日") )
     report.page.item(:examination_hall).value(et_report.examination_hall)
     report.page.item(:examinees_count_man).value(et_report.examinees_count_man)
     report.page.item(:examinees_count_woman).value(et_report.examinees_count_woman)
     report.page.item(:examinees_count_total).value("#{et_report.examinees_count_man + et_report.examinees_count_woman}")
-    report.page.item(:s_method_writing).value(et_report.s_method_writing)
-    report.page.item(:s_method_appropriate).value(et_report.s_method_appropriate)
-    report.page.item(:s_method_interview).value(et_report.s_method_interview)
-    report.page.item(:s_method_composition).value(et_report.s_method_composition)
-    report.page.item(:s_method_physical).value(et_report.s_method_physical)
-    report.page.item(:s_method_other).value(et_report.s_method_other)
+    case et_report.selection_method
+    when 1 
+      selection = "一次"
+    when 2
+      selection = "二次"
+    end
+    report.page.item(:selection_method).value(selection)
+    case et_report.s_method_writing
+    when true
+      writing = "有"
+    when false
+      writing = "無"
+    end  
+    report.page.item(:s_method_writing).value(writing)
+    case et_report.s_method_appropriate
+    when true
+      appropriate = "有"
+    when false 
+      appropriate = "無"
+    end
+    report.page.item(:s_method_appropriate).value(appropriate)
+    case et_report.s_method_interview
+    when true
+      interview = "有"
+    when false 
+      interview = "無"
+    end
+    report.page.item(:s_method_interview).value(interview)
+    case et_report.s_method_composition
+    when true
+      composition = "有"
+    when false
+      composition = "無"
+    end
+    report.page.item(:s_method_composition).value(composition)
+    case et_report.s_method_physical
+    when true
+      physical = "有"
+    when false
+      physical = "無"
+    end
+    report.page.item(:s_method_physical).value(physical)
+    case et_report.s_method_other
+    when true
+      other = "有"
+    when false
+      other = "無"
+    end
+    report.page.item(:s_method_other).value(other)
     report.page.item(:t_subject_japanese).value(et_report.t_subject_japanese)
     report.page.item(:t_subject_math).value(et_report.t_subject_math)
     report.page.item(:t_subject_society).value(et_report.t_subject_society)
@@ -121,7 +170,15 @@ class EtReportsController < ApplicationController
     report.page.item(:t_subject_other_time).value(et_report.t_subject_other_time)
     report.page.item(:t_subject_general).value(et_report.t_subject_general)
     report.page.item(:t_subject_aptitude).value(et_report.t_subject_aptitude)
-    report.page.item(:i_method_one).value(et_report.i_method_one)
+    case et_report.i_method_one
+    when 1
+      method_one = "1人"
+    when 2
+      method_one = "複数(#{et_report.i_method_count})人"
+    when 3
+      method_one = "集団討論"
+    end
+    report.page.item(:i_method_one).value(method_one)
     report.page.item(:judge_count).value(et_report.judge_count)
     report.page.item(:i_time).value(et_report.i_time)
     report.page.item(:i_other).value(et_report.i_other)
