@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
+<table width = "90%" border="1">
+  <tr>
+    <th>入学試験受験報告書</th>
+    <th>進路指導部長</th>
+    <th>学年主任</th>
+    <th>担任</th>
+  　<th>報告年月日</th>
+  </tr>
+
+  <tr>
+   <td></td><td></td><td></td><td></td><td><%= @ee_report.reporting_date.strftime("%Y年%m月%d日") %></td>
+  </tr>
+</table>
 <p>
   <strong>報告年月日:</strong>
   <%= @ee_report.reporting_date.strftime("%Y年%m月%d日") %>
