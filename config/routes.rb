@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post '/et_searchs', to: 'et_report_searchs#search'
   get 'home/retrieval_top'
   post '/users_search', to: 'users#search' 
+  get 'users/bulk_new'
+  post 'users/bulk_create', to: 'users#bulk_create'
   get 'home/report_top'
   get 'home/top'
   delete :users, to: 'users#destroy_all'
