@@ -107,6 +107,14 @@ class UsersController < ApplicationController
     #userのindexにredirect_toで画面遷移する。遷移後、「○件のユーザーを削除しました。」とメッセージが表示するようにする。
     redirect_to users_path, notice: "#{user_count}件のユーザーを削除しました。" 
   end
+  # CSVインポートページの表示
+  def bulk_new
+  end
+
+  def bulk_create
+    user_count = import_users
+    redirect_to users_path, notice: "#{user_count}件登録しました"
+  end
 
 
 
@@ -119,5 +127,19 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:user_id, :name, :password, :password_confirmation, :flg, :annual, :authority)
+    end
+
+    def import_users
+      # 登録処理前のレコード数
+      current_user_count = ::User.count
+      users = []
+      # windowsで作られたファイルに対応するので、encoding: "SJIS"を付けている
+      CSV.foreach(params[:users_file].path, headers: true, encoding: "SJIS") do |row|
+        users << ::User.new({ user_id: row["user_id"], name: row["name"], password: row["password"], authority: row["authority"], })
+      end
+      # importメソッドでバルクインサートできる
+      ::User.import(users)
+      # 何レコード登録できたかを返す
+      ::User.count - current_user_count
     end
 end
