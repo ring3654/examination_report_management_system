@@ -114,7 +114,24 @@ class EeReportsController < ApplicationController
     report.page.item(:test_day).value(ee_report.test_day.strftime("%Y年%m月%d日") )
     report.page.item(:examination_hall).value(ee_report.examination_hall)
     report.page.item(:result_publication_date).value(ee_report.result_publication_date.strftime("%Y年%m月%d日") )
-    report.page.item(:recommended_group).value(ee_report.recommended_group)
+     case ee_report.recommended_group 
+      when 1 then 
+        recommend = "特別入試"
+      when 2 then 
+        recommend = "指定校推薦"
+      when 3 then 
+        recommend = "AO推薦"
+      when 4 then 
+        recommend = " 一般推薦"
+      when 5 then 
+        recommend = "スポーツ推薦"
+      when 6 then 
+        recommend = "自己推薦"
+      when 7 then 
+        recommend = "その他の推薦"
+     end 
+  
+    report.page.item(:recommended_group).value(recommend)
     report.page.item(:t_subject_japanese).value(ee_report.t_subject_japanese)
     report.page.item(:t_subject_math).value(ee_report.t_subject_math)
     report.page.item(:t_subject_society).value(ee_report.t_subject_society)
@@ -127,20 +144,20 @@ class EeReportsController < ApplicationController
     report.page.item(:g_impressions).value(ee_report.g_impressions)
     # 3 ページ目
     report.start_new_page layout: "#{Rails.root}/app/views/ee_reports/入学試験受験報告書_裏.tlf"
-    # case ee_report.recommended_form 
-    #  when 1 then 
-    #   書類選考のみ
-    #  when 2 then 
-    #   「書類選考」＋「面接」
-    # when 3 then 
-    #   「書類選考」＋「面接」＋ 試験
-    #  when 4 then
-    #   「書類選考」＋「面接」＋ 小論文（作文）
-    #  when 5 then
-    #   「書類選考」＋「面接」＋ 小論文（作文）＋ 試験
-    # end
+     case ee_report.recommended_form 
+      when 1 then 
+       recommended = "書類選考のみ"
+      when 2 then 
+       recommended = "「書類選考」＋「面接」"
+      when 3 then 
+       recommended = "「書類選考」＋「面接」＋ 試験"
+      when 4 then
+       recommended = "「書類選考」＋「面接」＋ 小論文（作文）"
+      when 5 then
+       recommended = "「書類選考」＋「面接」＋ 小論文（作文）＋ 試験"
+     end
   
-    report.page.item(:recommended_form).value(ee_report.recommended_form)
+    report.page.item(:recommended_form).value(recommended)
     report.page.item(:i_q_contents).value(ee_report.i_q_contents)
     report.page.item(:i_q_images).value("public/images/#{ee_report.i_q_images}")
     report.page.item(:e_contents).value(ee_report.e_contents)

@@ -997,10 +997,10 @@
         "border-width": 1,
         "border-style": "solid"
       },
-      "x1": 110.8,
+      "x1": 145,
       "y1": 235,
       "x2": 575.2,
-      "y2": 235
+      "y2": 235.8
     },
     {
       "id": "",
@@ -1198,58 +1198,6 @@
       },
       "texts": [
         "試験日"
-      ]
-    },
-    {
-      "id": "",
-      "type": "text",
-      "display": true,
-      "description": "",
-      "x": 110.2,
-      "y": 222,
-      "width": 34.8,
-      "height": 12.7,
-      "style": {
-        "font-family": [
-          "Helvetica"
-        ],
-        "font-size": 10,
-        "color": "#000000",
-        "text-align": "center",
-        "vertical-align": "top",
-        "line-height": "",
-        "line-height-ratio": "",
-        "letter-spacing": "",
-        "font-style": []
-      },
-      "texts": [
-        "一次"
-      ]
-    },
-    {
-      "id": "",
-      "type": "text",
-      "display": true,
-      "description": "",
-      "x": 109.2,
-      "y": 236.3,
-      "width": 36.3,
-      "height": 13.2,
-      "style": {
-        "font-family": [
-          "Helvetica"
-        ],
-        "font-size": 10,
-        "color": "#000000",
-        "text-align": "center",
-        "vertical-align": "top",
-        "line-height": "",
-        "line-height-ratio": "",
-        "letter-spacing": "",
-        "font-style": []
-      },
-      "texts": [
-        "二次"
       ]
     },
     {
@@ -1801,7 +1749,7 @@
       "type": "text-block",
       "display": true,
       "description": "",
-      "x": 430.2,
+      "x": 428.2,
       "y": 135.8,
       "width": 41.1,
       "height": 20,
@@ -2408,48 +2356,6 @@
       "display": true,
       "description": "",
       "x": 59.2,
-      "y": 411.6,
-      "width": 51.6,
-      "height": 268.3,
-      "style": {
-        "font-family": [
-          "Helvetica"
-        ],
-        "font-size": 12,
-        "color": "#000000",
-        "text-align": "center",
-        "vertical-align": "top",
-        "line-height": "",
-        "line-height-ratio": "",
-        "letter-spacing": "",
-        "font-style": []
-      },
-      "texts": [
-        "面",
-        "",
-        "説",
-        "",
-        "内",
-        "",
-        "容",
-        "",
-        "・",
-        "",
-        "質",
-        "",
-        "問",
-        "",
-        "内",
-        "",
-        "容"
-      ]
-    },
-    {
-      "id": "",
-      "type": "text",
-      "display": true,
-      "description": "",
-      "x": 59.2,
       "y": 797.7,
       "width": 51.6,
       "height": 31.3,
@@ -2677,7 +2583,7 @@
       "description": "",
       "x": 115,
       "y": 350,
-      "width": 296.8,
+      "width": 298.6,
       "height": 437.9,
       "style": {
         "font-family": [
@@ -2721,8 +2627,8 @@
       "type": "text-block",
       "display": true,
       "description": "",
-      "x": 167.1,
-      "y": 797.9,
+      "x": 169.1,
+      "y": 793.9,
       "width": 258.4,
       "height": 20,
       "style": {
@@ -3169,8 +3075,8 @@
       "type": "text-block",
       "display": true,
       "description": "",
-      "x": 438.5,
-      "y": 196.8,
+      "x": 434.4,
+      "y": 200,
       "width": 21.6,
       "height": 20.5,
       "style": {
@@ -3201,8 +3107,8 @@
       "type": "text-block",
       "display": true,
       "description": "",
-      "x": 493.4,
-      "y": 196.8,
+      "x": 484.8,
+      "y": 200,
       "width": 21.6,
       "height": 20.5,
       "style": {
@@ -3233,7 +3139,7 @@
       "type": "text",
       "display": true,
       "description": "",
-      "x": 428.4,
+      "x": 425,
       "y": 201.5,
       "width": 10,
       "height": 11,
@@ -3259,7 +3165,7 @@
       "type": "text",
       "display": true,
       "description": "",
-      "x": 463.2,
+      "x": 455,
       "y": 201.5,
       "width": 10,
       "height": 11,
@@ -3285,7 +3191,7 @@
       "type": "text",
       "display": true,
       "description": "",
-      "x": 480.5,
+      "x": 475.3,
       "y": 201.5,
       "width": 10,
       "height": 11,
@@ -3304,32 +3210,6 @@
       },
       "texts": [
         "女"
-      ]
-    },
-    {
-      "id": "",
-      "type": "text",
-      "display": true,
-      "description": "",
-      "x": 521.6,
-      "y": 201.5,
-      "width": 10,
-      "height": 11,
-      "style": {
-        "font-family": [
-          "Helvetica"
-        ],
-        "font-size": 10,
-        "color": "#000000",
-        "text-align": "right",
-        "vertical-align": "top",
-        "line-height": "",
-        "line-height-ratio": "",
-        "letter-spacing": "",
-        "font-style": []
-      },
-      "texts": [
-        "人"
       ]
     },
     {
@@ -3363,13 +3243,199 @@
         "base": "",
         "type": ""
       }
+    },
+    {
+      "id": "",
+      "type": "text",
+      "display": true,
+      "description": "",
+      "x": 66.6,
+      "y": 422,
+      "width": 38,
+      "height": 256.5,
+      "style": {
+        "font-family": [
+          "Helvetica"
+        ],
+        "font-size": 12,
+        "color": "#000000",
+        "text-align": "center",
+        "vertical-align": "top",
+        "line-height": "",
+        "line-height-ratio": "",
+        "letter-spacing": "",
+        "font-style": []
+      },
+      "texts": [
+        "面",
+        "",
+        "接",
+        "",
+        "内",
+        "",
+        "容",
+        "",
+        "・",
+        "",
+        "質",
+        "",
+        "問",
+        "",
+        "内",
+        "",
+        "容",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "",
+      "type": "text",
+      "display": true,
+      "description": "",
+      "x": 527.6,
+      "y": 201.5,
+      "width": 10,
+      "height": 11,
+      "style": {
+        "font-family": [
+          "Helvetica"
+        ],
+        "font-size": 10,
+        "color": "#000000",
+        "text-align": "right",
+        "vertical-align": "top",
+        "line-height": "",
+        "line-height-ratio": "",
+        "letter-spacing": "",
+        "font-style": []
+      },
+      "texts": [
+        "計"
+      ]
+    },
+    {
+      "id": "",
+      "type": "text",
+      "display": true,
+      "description": "",
+      "x": 561.1,
+      "y": 201.5,
+      "width": 10,
+      "height": 11,
+      "style": {
+        "font-family": [
+          "Helvetica"
+        ],
+        "font-size": 10,
+        "color": "#000000",
+        "text-align": "right",
+        "vertical-align": "top",
+        "line-height": "",
+        "line-height-ratio": "",
+        "letter-spacing": "",
+        "font-style": []
+      },
+      "texts": [
+        "人"
+      ]
+    },
+    {
+      "id": "",
+      "type": "text",
+      "display": true,
+      "description": "",
+      "x": 504.9,
+      "y": 201.5,
+      "width": 10,
+      "height": 11,
+      "style": {
+        "font-family": [
+          "Helvetica"
+        ],
+        "font-size": 10,
+        "color": "#000000",
+        "text-align": "right",
+        "vertical-align": "top",
+        "line-height": "",
+        "line-height-ratio": "",
+        "letter-spacing": "",
+        "font-style": []
+      },
+      "texts": [
+        "人"
+      ]
+    },
+    {
+      "id": "examinees_count_total",
+      "type": "text-block",
+      "display": true,
+      "description": "",
+      "x": 537.8,
+      "y": 200,
+      "width": 21.6,
+      "height": 20.5,
+      "style": {
+        "font-family": [
+          "Helvetica"
+        ],
+        "font-size": 18,
+        "color": "#000000",
+        "text-align": "right",
+        "vertical-align": "top",
+        "line-height": "",
+        "line-height-ratio": "",
+        "letter-spacing": "",
+        "font-style": [],
+        "overflow": "fit",
+        "word-wrap": "none"
+      },
+      "reference-id": "",
+      "value": "",
+      "multiple-line": false,
+      "format": {
+        "base": "",
+        "type": ""
+      }
+    },
+    {
+      "id": "selection_method",
+      "type": "text-block",
+      "display": true,
+      "description": "",
+      "x": 116.3,
+      "y": 227.3,
+      "width": 25,
+      "height": 20,
+      "style": {
+        "font-family": [
+          "Helvetica"
+        ],
+        "font-size": 18,
+        "color": "#000000",
+        "text-align": "center",
+        "vertical-align": "top",
+        "line-height": "",
+        "line-height-ratio": "",
+        "letter-spacing": "",
+        "font-style": [],
+        "overflow": "fit",
+        "word-wrap": "none"
+      },
+      "reference-id": "",
+      "value": "",
+      "multiple-line": false,
+      "format": {
+        "base": "",
+        "type": ""
+      }
     }
   ],
   "state": {
     "layout-guides": [
       {
         "type": "x",
-        "position": 50.1
+        "position": 33.8
       },
       {
         "type": "y",
@@ -3377,7 +3443,7 @@
       }
     ]
   },
-  "title": "入学試験受験報告書",
+  "title": "就職試験受験報告書",
   "report": {
     "paper-type": "A4",
     "orientation": "portrait",
