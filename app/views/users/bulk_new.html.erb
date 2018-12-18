@@ -3,9 +3,9 @@
 <% end %>
 
 <div>
-  <%= form_tag users_bulk_create_path, method: :post, multipart: true do |f| %>
+  <%= form_with url: users_bulk_create_path, multipart: true do |f| %>
     <div class="search_item">
-      <%= file_field_tag 'users_file', id: "file_input" %>
+      <%= f.file_field 'users_file' %>
     </div>
     <div>
       <button type="submit" class="btn btn-primary">CSVインポート</button>
@@ -13,9 +13,3 @@
   <% end %>
 </div>
 
-<script type="text/javascript">
-  function file_selected(file_field){
-    var filename = $(file_field)[0].files[0].name;
-    $("#filename").val(filename);
-  }
-</script>
