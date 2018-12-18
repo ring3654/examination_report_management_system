@@ -133,8 +133,11 @@ class UsersController < ApplicationController
       # 登録処理前のレコード数
       current_user_count = ::User.count
       users = []
+      logger.debug("==============================")
+      logger.debug(params[:users_file].headers)
+      logger.debug("==============================")
       # windowsで作られたファイルに対応するので、encoding: "SJIS"を付けている
-      CSV.foreach(params[:users_file].path, headers: true, encoding: "SJIS") do |row|
+      CSV.foreach(params[:users_file].tempfile.path, headers: true, encoding: "SJIS") do |row|
         users << ::User.new({ user_id: row["user_id"], name: row["name"], password: row["password"], authority: row["authority"], })
       end
       # importメソッドでバルクインサートできる

@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
-<table border = "1">
+
+<table width = "90%" border = "1">
+
 
 <tr>
 
-<th>就職試験受験報告書</th>
+<th colspan="4" rowspan="2">就職試験受験報告書</th>
 <th>進路指導部長</th>
 <th>学年主任</th>
 <th>担任</th>
@@ -11,8 +13,67 @@
 </tr>
 
   <tr>
-    <td></td><td></td><td></td><td></td><td><%= @et_report.reporting_datestrftime("%Y年%m月%d日") %></td>
+    <td></td><td></td><td></td><td><%= @et_report.reporting_date.strftime("%Y年%m月%d日") %></td>
   </tr>
+
+  <th>受験者</th>
+  <td colspan="3">3年<%= @et_report.student_class %>組 <%= @et_report.student_number %>番</td>
+  <th>氏名</th>
+  <td><%= @et_report.student_id %></td>
+  <th>職種</th>
+  <td><%= @et_report.job_category %></td>
+
+  <tr>
+  <th>事業所名</th>
+  <td colspan="4"><%= @et_report.office_name %></td>
+  <th>求人票受付番号</th>
+  <td><%= @et_report.job_vote_number %></td>
+  <% case @et_report.introduction_number %>
+   <% when 1 then %>
+     <% introduction_number = "学校斡旋" %>
+   <% when 2 then %>
+     <% introduction_number = "縁故" %>
+   <% end %>
+   <td><%=  introduction_number %></td>
+  </tr>
+
+  <th>所在地</th>
+  <td colspan="5"><%= @et_report.street_address %></td>
+  <th>試験日</th>
+  <td><%= @et_report.test_day.strftime("%Y年%m月%d日") %></td>
+
+  <tr>
+  <th>試験場</th>
+  <td colspan="4"><%= @et_report.examination_hall %></td>
+  <th>受験者数</th>
+  <td colspan="3">男<%= @et_report.examinees_count_man %>人 女<%= @et_report.examinees_count_woman %>人　計<%= "#{@et_report.examinees_count_man + @et_report.examinees_count_woman}" %>人</td> 
+  </tr>
+
+  <th rowspan="2">選考方法</th>
+  <% case @et_report.selection_method %>
+  <% when 1 then %>
+     <% selection_method = "一次" %>
+  <% when 2 then %>
+     <% selection_method = "二次" %>
+  <% end %>
+  <td rowspan="2"><%= selection_method %></td>
+  <th>筆記試験</th>
+  <% case @et_report.s_method_writing %>
+  <% when true then %>
+    <% s_method_writing = "有" %>
+  <% when false then %>
+    <% s_method_writing = "無" %>
+  <% end %>
+
+  <th>適正試験</th>
+  <th>面接</th>
+  <th>作文</th>
+  <th>身体検査</th>
+  <th>その他</th>
+
+  <tr>
+  <th rowapan="2">試験科目</th>
+
 </table>
 <p>
   <strong>報告年月日:</strong>
