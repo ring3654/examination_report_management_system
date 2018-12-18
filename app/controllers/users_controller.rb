@@ -134,7 +134,7 @@ class UsersController < ApplicationController
       current_user_count = ::User.count
       users = []
       # windowsで作られたファイルに対応するので、encoding: "SJIS"を付けている
-      CSV.foreach(params[:users_file].path, headers: true, encoding: "SJIS") do |row|
+      CSV.foreach(params[:tempfile].path, headers: true, encoding: "SJIS") do |row|
         users << ::User.new({ user_id: row["user_id"], name: row["name"], password: row["password"], authority: row["authority"], })
       end
       # importメソッドでバルクインサートできる
