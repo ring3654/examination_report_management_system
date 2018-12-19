@@ -98,13 +98,14 @@
   </tr>
 
   <tr>
-    <th rowspan="4">問題の内容</th>
-    <td rowspan="4" colspan="7"><%= @ee_report.g_q_contents %></td>
+    <th >問題の内容</th>
+    <td colspan="7"><%= @ee_report.g_q_contents %><br><%= image_tag "/images/#{@ee_report.g_q_image}",width: 200 %>
+    </td>
   </tr>
 
   <tr>
-    <th rowspan="3">【感想】</th>
-    <td rowspan="3"><%= @ee_report.g_impressions %></td>
+    <th>【感想】</th>
+    <td colspan="7"><%= @ee_report.g_impressions %></td>
   </tr>
 </table>
 
@@ -130,59 +131,22 @@
   </tr>
 
   <tr>
-    <td rowspan="4" colspan="8">「面接」での質問内容<br><%= @ee_report.i_q_contents %></td>
+    <td colspan="8">「面接」での質問内容<br><%= @ee_report.i_q_contents %><br><%= image_tag "/images/#{@ee_report.i_q_images}",width: 200 %></td>
   </tr>
 
   <tr>
-    <td rowspan="2" colspan="8">「小論文」(作文)のテーマ<br><%= @ee_report.e_contents %></td>
+    <td colspan="8">「小論文」(作文)のテーマ<br><%= @ee_report.e_contents %></td>
   </tr>
 
   <tr>
-    <td rowspan="4" colspan="8">「試験」の内容<br><%= @ee_report.w_contents %></td>
+    <td colspan="8">「試験」の内容<br><%= @ee_report.w_contents %></td>
   </tr>
 
   <tr>
-    <td rowspan="4" colspan="8">【感想】<br><%= @ee_report.r_impression %></td>
+    <td colspan="8">【感想】<br><%= @ee_report.r_impression %></td>
   </tr>
 
 </table>
-<p>
-
-<p>
-  <strong>面接内容:</strong>
-  <%= @ee_report.i_q_contents %>
-</p>
-
-<p>
-  <strong>面接画像:</strong>
-  <%= image_tag "/images/#{@ee_report.i_q_images}",width: 200 %>
-
-</p>
-
-<p>
-  <strong>小論文の内容:</strong>
-  <%= @ee_report.e_contents %>
-</p>
-
-<p>
-  <strong>筆記の内容:</strong>
-  <%= @ee_report.w_contents %>
-</p>
-
-<p>
-  <strong>感想（推薦）:</strong>
-  <%= @ee_report.r_impression %>
-</p>
-
-<p>
-  <strong>承認フラグ:</strong>
-  <% case @ee_report.approval_flg %>
-  <% when 0 then %>
-   未承認
-  <% when 1 then %>
-  　承認済み
-  <% end %>
-</p>
 
 <%= link_to '編集', edit_ee_report_path(@ee_report) %> |
 <%= link_to '戻る', :back %>
