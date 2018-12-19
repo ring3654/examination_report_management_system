@@ -75,7 +75,7 @@
   </tr>
 </table>
 
-<strong>「一般入試」の受験者:</strong>
+<strong>Ⅰ「一般入試」の受験者:</strong>
 
 <table width = "90%" border="1">
   <tr>
@@ -98,126 +98,55 @@
   </tr>
 
   <tr>
-    <th rowspan="5">問題の内容</th>
-    <td rowspan="5" colspan="7"><%= @ee_report.g_q_contents %></td>
+    <th >問題の内容</th>
+    <td colspan="7"><%= @ee_report.g_q_contents %><br><%= image_tag "/images/#{@ee_report.g_q_image}",width: 200 %>
+    </td>
   </tr>
 
   <tr>
     <th>【感想】</th>
+    <td colspan="7"><%= @ee_report.g_impressions %></td>
   </tr>
-  </table>
+</table>
 
-<p>
-  <strong>入試形態:</strong>
-  <% case @ee_report.entrance_form %>
-  <% when 1 then %>
-    一般入試
-  <% when 2 then %>
-    推薦入試
-    <% end %>
-  </p>
+<strong>Ⅱ「推薦入試」の受験者:</strong>
 
-<p>
-  <strong>推薦入試形態:</strong>
-  <% case @ee_report.recommended_group %>
+<% case @ee_report.recommended_form %>
   <% when 1 then %>
-    特別入試
+    <% recommended_form = "書類選考のみ" %>
   <% when 2 then %>
-    指定校推薦
+    <% recommended_form = "「書類選考」＋「面接」" %>
   <% when 3 then %>
-    AO推薦
+    <% recommended_form = "「書類選考」＋「面接」＋ 試験" %>
   <% when 4 then %>
-    一般推薦
+    <% recommended_form = "「書類選考」＋「面接」＋ 小論文（作文）" %>
   <% when 5 then %>
-    スポーツ推薦
-  <% when 6 then %>
-    自己推薦
-  <% when 7 then %>
-    その他の推薦
+    <% recommended_form = "「書類選考」＋「面接」＋ 小論文（作文）＋ 試験" %>
     <% end %>
-    </p>
 
-<p>
-  <strong>試験時間（英語）:</strong>
-  <%= @ee_report.t_subject_english %>分
-</p>
+<table width = "90%" border="1">
+  <tr>
+  <th>形態</th>
+  <td colspan="8"><%= recommended_form %></td>
+  </tr>
 
-<p>
-  <strong>試験科目（その他）:</strong>
-  <%= @ee_report.t_subject_other %>
-</p>
+  <tr>
+    <td colspan="8">「面接」での質問内容<br><%= @ee_report.i_q_contents %><br><%= image_tag "/images/#{@ee_report.i_q_images}",width: 200 %></td>
+  </tr>
 
-<p>
-  <strong>試験時間（その他）:</strong>
-  <%= @ee_report.t_subject_other_time %>分
-</p>
+  <tr>
+    <td colspan="8">「小論文」(作文)のテーマ<br><%= @ee_report.e_contents %></td>
+  </tr>
 
-<p>
-  <strong>問題の内容:</strong>
-  <%= @ee_report.g_q_contents %>
-</p>
+  <tr>
+    <td colspan="8">「試験」の内容<br><%= @ee_report.w_contents %></td>
+  </tr>
 
-<p>
-  <strong>問題画像:</strong>
-  <%= image_tag "/images/#{@ee_report.g_q_image}",width: 200 %>
-  </p>
+  <tr>
+    <td colspan="8">【感想】<br><%= @ee_report.r_impression %></td>
+  </tr>
 
-<p>
-  <strong>感想:</strong>
-  <%= @ee_report.g_impressions %>
-</p>
-
-<p>
-  <strong>推薦形態:</strong>
-  <% case @ee_report.recommended_form %>
-  <% when 1 then %>
-    書類選考のみ
-  <% when 2 then %>
-    「書類選考」＋「面接」
-  <% when 3 then %>
-    「書類選考」＋「面接」＋ 試験
-  <% when 4 then %>
-    「書類選考」＋「面接」＋ 小論文（作文）
-  <% when 5 then %>
-    「書類選考」＋「面接」＋ 小論文（作文）＋ 試験
-    <% end %>
-</p>
-
-<p>
-  <strong>面接内容:</strong>
-  <%= @ee_report.i_q_contents %>
-</p>
-
-<p>
-  <strong>面接画像:</strong>
-  <%= image_tag "/images/#{@ee_report.i_q_images}",width: 200 %>
-
-</p>
-
-<p>
-  <strong>小論文の内容:</strong>
-  <%= @ee_report.e_contents %>
-</p>
-
-<p>
-  <strong>筆記の内容:</strong>
-  <%= @ee_report.w_contents %>
-</p>
-
-<p>
-  <strong>感想（推薦）:</strong>
-  <%= @ee_report.r_impression %>
-</p>
-
-<p>
-  <strong>承認フラグ:</strong>
-  <% case @ee_report.approval_flg %>
-  <% when 0 then %>
-   未承認
-  <% when 1 then %>
-  　承認済み
-  <% end %>
-</p>
+</table>
 
 <%= link_to '編集', edit_ee_report_path(@ee_report) %> |
 <%= link_to '戻る', :back %>
