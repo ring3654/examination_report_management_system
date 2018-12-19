@@ -58,23 +58,114 @@
   <% end %>
   <td rowspan="2"><%= selection_method %></td>
   <th>筆記試験</th>
-  <% case @et_report.s_method_writing %>
-  <% when true then %>
-    <% s_method_writing = "有" %>
-  <% when false then %>
-    <% s_method_writing = "無" %>
-  <% end %>
-
   <th>適正試験</th>
   <th>面接</th>
   <th>作文</th>
   <th>身体検査</th>
   <th>その他</th>
-
   <tr>
-  <th rowapan="2">試験科目</th>
-
+  <% case @et_report.s_method_writing %>
+    <% when true then %>
+      <% s_method_writing = "有" %>
+    <% when false then %>
+      <% s_method_writing = "無" %>
+    <% end %>
+<td><%= s_method_writing %></td>
+<% case @et_report.s_method_appropriate %>
+    <% when true then %>
+      <% s_method_appropriate = "有" %>
+    <% when false then%>
+      <% s_method_appropriate = "無" %>
+    <% end %>
+<td><%= s_method_appropriate %></td>
+<% case @et_report.s_method_interview %>
+     <% when true then %>
+      <% s_method_interview = "有" %>
+    <% when false then %>
+      <% s_method_interview = "無" %>
+    <% end %>
+<td><%= s_method_interview %></td>
+<% case @et_report.s_method_composition %>
+     <% when true then %>
+        <% s_method_composition = "有" %>
+     <% when false then %>
+        <% s_method_composition = "無" %>
+     <% end %>
+ <td><%= s_method_composition %></td>
+<% case @et_report.s_method_physical %>
+     <% when true then %>
+       <% s_method_physical = "有" %>
+     <% when false then %>
+       <% s_method_physical = "無" %>
+     <% end %>
+     <td><%= s_method_physical %></td>
+<% case @et_report.s_method_other %>
+     <% when true then %>
+        <% s_method_other = "有" %>
+     <% when false then %>
+        <% s_method_other = "無" %>
+     <% end %>
+     <td><%= s_method_other %></td>
+ </tr>
+ <th rowspan="2">試験科目</th>
+ <th>国語</th>
+ <th>数学</th>
+ <th>社会</th>
+ <th>理科</th>
+ <th>英語</th>
+ <td><%= @et_report.t_subject_other_name %></td>
+ <th>一般常識</th>
+ <th>適正問題</th>
+ <tr>
+ <td><%= @et_report.t_subject_japanese %>分</td>
+ <td><%= @et_report.t_subject_math %>分</td>
+ <td><%= @et_report.t_subject_society %>分</td>
+ <td><%= @et_report.t_subject_science %>分</td>
+ <td><%= @et_report.t_subject_english %>分</td>
+ <td><%= @et_report.t_subject_other_time %>分</td>
+ <td><%= @et_report.t_subject_general %>分</td>
+ <td><%= @et_report.t_subject_aptitude %>分</td>
+ </tr>
+ <tr>
+ <th rowspan="8"><span Style=”writing-mode:tb-rl;”>面接内容・質問内容</span></th>
+ </tr>
+ <th colspan="5">面接方法(受験者数)</th>
+ <th>面接委員</th>
+ <th>面接時間</th>
+ <th>その他</th>
+ <tr>
+ <% case @et_report.i_method_one %>
+   <% when 1 then %>
+     <% i_method_one = "1人" %>
+   <% when 2 then %>
+     <% i_method_one = "複数(#{@et_report.i_method_count})人" %>
+   <% when 3 then %>
+     <% i_method_one = "集団討論" %>
+   <% end %>
+   <td colspan="5"><%= i_method_one %></td>
+ <td><%= @et_report.judge_count %>人</td>
+ <td><%= @et_report.i_time %>分</td>
+ <td><%= @et_report.i_other %></td>
+ </tr>
+ <tr>
+ <td colspan="8"><%= @et_report.i_contents %><br><%= image_tag "/images/#{@et_report.i_image}",width: 400 %></td>
+ </tr>
+ <tr>
+ <th rowspan="2">作文</th>
+ <th rowspan="2">題目</th>
+ <td colspan="5"><%= @et_report.composition_title %></td>
+ <td rowspan="2">原稿用紙(400字詰)<%= @et_report.c_sheet_count %>枚位</td>
+ </tr>
 </table>
+
+<table width = "90%" border = "1">
+<th>筆記試験問題(内容)＊できるかぎり詳しく書いてください。</th>
+<tr>
+<td><%= @et_report.writing_test_contents %></td>
+</tr>
+<td>＊受験上参考になることがあれば記入してください。<br><%= @et_report.other_coment %></td>
+</table>
+
 <p>
   <strong>報告年月日:</strong>
   <%= @et_report.reporting_date.strftime("%Y年%m月%d日") %>
