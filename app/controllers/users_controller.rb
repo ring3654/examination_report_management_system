@@ -133,15 +133,21 @@ class UsersController < ApplicationController
       # 登録処理前のレコード数
       current_user_count = ::User.count
       users = []
-      logger.debug("==============================")
-      logger.debug(params[:users_file].headers)
-      logger.debug("==============================")
+      u_id = User.maximum(:id) + 1
       # windowsで作られたファイルに対応するので、encoding: "SJIS"を付けている
       CSV.foreach(params[:users_file].tempfile.path, headers: true, encoding: "SJIS") do |row|
-        users << ::User.new({ user_id: row["user_id"], name: row["name"], password: row["password"], authority: row["authority"], })
+        logger.debug("==============================")
+        logger.debug(row["password"])
+        logger.debug("==============================")
+        #users << ::User.new({ id: u_id, user_id: row["user_id"], name: row["name"], password: row["password"], authority: row["authority"], })
+        users << User.create( user_id: row["user_id"], name: row["name"], password: row["password"].to_s, authority: row["authority"])
+        u_id += 1
       end
+        logger.debug("==============================")
+        logger.debug(users)
+        logger.debug("==============================")
       # importメソッドでバルクインサートできる
-      ::User.import(users)
+      # ::User.import(users)
       # 何レコード登録できたかを返す
       ::User.count - current_user_count
     end
