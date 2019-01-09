@@ -37,14 +37,14 @@
     <th>所在地</th>
     <td colspan="5"><%= @ee_report.street_address %></td>
     <th>試験日</th>
-    <td colspan="2"><%= @ee_report.test_day.strftime("%Y年%m月%d日") %></td>
+    <td colspan="2"><%= @ee_report.test_day.strftime("%m月%d日") %></td>
   </tr>
 
   <tr>
     <th>試験場</th>
     <td colspan="5"><%= @ee_report.examination_hall %></td>
     <th>合格発表日</th>
-    <td colspan="2"><%= @ee_report.result_publication_date.strftime("%Y年%m月%d日") %></td>
+    <td colspan="2"><%= @ee_report.result_publication_date.strftime("%m月%d日") %></td>
   </tr>
  
   <tr>
@@ -75,7 +75,7 @@
   </tr>
 </table>
 
-<strong>Ⅰ「一般入試」の受験者:</strong>
+<strong>Ⅰ「一般入試」の受験者</strong>
 
 <table width = "90%" border="1">
   <tr>
@@ -109,7 +109,7 @@
   </tr>
 </table>
 
-<strong>Ⅱ「推薦入試」の受験者:</strong>
+<strong>Ⅱ「推薦入試」の受験者</strong>
 
 <% case @ee_report.recommended_form %>
   <% when 1 then %>
@@ -149,7 +149,7 @@
 </table>
 
 <%= link_to '編集', edit_ee_report_path(@ee_report) %> |
-<%= link_to '戻る', :back %>
+<%= link_to '戻る', home_top_path %>
   <%= form_tag('/ee_reports/output') do %>
     <%= submit_tag '印刷' %>
     <%= hidden_field_tag "output_id", @ee_report.id %>
