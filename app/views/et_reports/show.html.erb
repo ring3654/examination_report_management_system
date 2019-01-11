@@ -4,28 +4,29 @@
 
 
 <tr>
-
-<th colspan="5" rowspan="2">就職試験受験報告書</th>
+<th colspan="4" rowspan="2">就職試験受験報告書</th>
 <th>進路指導部長</th>
 <th>学年主任</th>
 <th>担任</th>
 <th>報告年月日</th>
-</tr>
-
-  <tr>
-    <td></td><td></td><td></td><td><%= @et_report.reporting_date.strftime("%Y年%m月%d日") %></td>
   </tr>
 
-  <th>受験者</th>
-  <td colspan="3">3年<%= @et_report.student_class %>組 <%= @et_report.student_number %>番</td>
-  <th>氏名</th>
-  <td colspan="2"><%= @et_report.student_id %></td>
-  <th>職種</th>
-  <td><%= @et_report.job_category %></td>
+  <tr>
+   <td></td><td></td><td></td><td><%= @et_report.reporting_date.strftime("%Y年%m月%d日") %></td>
+  </tr>
+
+  <tr>
+    <th>受験者</th>
+    <td colspan="2">3年<%= @et_report.student_class %>組<%= @et_report.student_number %>番</td>
+    <th>氏名</th>
+    <td colspan="2"><%= @et_report.student_id %></td>
+    <th>職種</th>
+    <td><%= @et_report.job_category %></td>
+  </tr>
 
   <tr>
   <th>事業所名</th>
-  <td colspan="5"><%= @et_report.office_name %></td>
+  <td colspan="4"><%= @et_report.office_name %></td>
   <th>求人票受付番号</th>
   <td><%= @et_report.job_vote_number %></td>
   <% case @et_report.introduction_number %>
@@ -36,19 +37,22 @@
    <% end %>
    <td><%=  introduction_number %></td>
   </tr>
-
+<tr>
   <th>所在地</th>
-  <td colspan="6"><%= @et_report.street_address %></td>
+  <td colspan="5"><%= @et_report.street_address %></td>
   <th>試験日</th>
   <td><%= @et_report.test_day.strftime("%m月%d日") %></td>
+</tr>
 
-  <tr>
+<tr>
   <th>試験場</th>
-  <td colspan="5"><%= @et_report.examination_hall %></td>
+  <td colspan="4"><%= @et_report.examination_hall %></td>
   <th>受験者数</th>
   <td colspan="2">男<%= @et_report.examinees_count_man %>人 女<%= @et_report.examinees_count_woman %>人　計<%= "#{@et_report.examinees_count_man + @et_report.examinees_count_woman}" %>人</td> 
   </tr>
+</table>
 
+  <table width = "90%" border = "1">
   <tr>
   <th rowspan="2">選考方法</th>
   <% case @et_report.selection_method %>
@@ -57,14 +61,15 @@
   <% when 2 then %>
      <% selection_method = "二次" %>
   <% end %>
-  <td rowspan="2"><%= selection_method %></td>
+  <td rowspan="2"><center><%= selection_method %></center></td>
   <th>筆記試験</th>
   <th>適正試験</th>
-  <th>面接</th>
-  <th>作文</th>
+  <th>　面接　</th>
+  <th>　作文　</th>
   <th>身体検査</th>
-  <th>その他</th>
+  <th><center>その他　</center></th>
   </tr>
+
   <tr>
   <% case @et_report.s_method_writing %>
     <% when true then %>
@@ -109,6 +114,9 @@
      <% end %>
      <td><%= s_method_other %></td>
  </tr>
+</table>
+
+<table width = "90%" border = "1">
  <tr>
  <th rowspan="2">試験科目</th>
  <th>国語</th>
@@ -116,10 +124,11 @@
  <th>社会</th>
  <th>理科</th>
  <th>英語</th>
- <td><%= @et_report.t_subject_other_name %></td>
+ <td><center><%= @et_report.t_subject_other_name %></center></td>
  <th>一般常識</th>
  <th>適正問題</th>
  </tr>
+ 
  <tr>
  <td><%= @et_report.t_subject_japanese %>分</td>
  <td><%= @et_report.t_subject_math %>分</td>
@@ -130,6 +139,9 @@
  <td><%= @et_report.t_subject_general %>分</td>
  <td><%= @et_report.t_subject_aptitude %>分</td>
  </tr>
+ </table>
+
+ <table width = "90%" border = "1">
  <tr>
  <th rowspan="7">面接内容・質問内容</th>
  </tr>
@@ -151,16 +163,18 @@
  <td><%= @et_report.i_time %>分</td>
  <td><%= @et_report.i_other %></td>
  </tr>
- <tr></tr><tr></tr><tr></tr>
- <td colspan="8"><%= @et_report.i_contents %><br><%= image_tag "/images/#{@et_report.i_image}",width: 400 %></td>
 
- <tr>
- <th rowspan="2">作文</th>
- <th rowspan="2">題目</th>
- <td colspan="6"><%= @et_report.composition_title %></td>
- <td rowspan="2">原稿用紙(400字詰)<%= @et_report.c_sheet_count %>枚位</td>
- </tr>
+ <td colspan="8"><%= @et_report.i_contents %><br><%= image_tag "/images/#{@et_report.i_image}",width: 400 %></td>
 </table>
+
+<table width = "90%" border = "1">
+ <tr>
+ <th>作文</th>
+ <th>題目</th>
+ <td colspan="6"><%= @et_report.composition_title %></td>
+ <td>原稿用紙(400字詰)<%= @et_report.c_sheet_count %>枚位</td>
+ </tr>
+ </table>
 
 <table width = "90%" border = "1">
 <th>筆記試験問題(内容)＊できるかぎり詳しく書いてください。</th>
@@ -169,7 +183,6 @@
 </tr>
 <td>＊受験上参考になることがあれば記入してください。(失敗事例を含め)<br><%= @et_report.other_coment %></td>
 </table>
-
 
 <p>
   <strong>承認フラグ:</strong>
