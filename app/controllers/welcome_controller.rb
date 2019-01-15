@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
       user = User.find_by(user_id: @user_id)
       if user.present?
         if user.flg == 1
-          flash[:error] = "このユーザーは既に削除されています。。"
+          flash[:error] = "このユーザーは既に削除されています。"
           render :login, layout: nil
         elsif user.authenticate("#{password}")
           session[:login_id] = user.user_id
