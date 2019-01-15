@@ -5,7 +5,7 @@ class EeReportSearchsController < ApplicationController
 
 
   def index
-    @ee_reports = EeReport.where(approval_flg: 1).page(params[:page]).per(PER)
+    @ee_reports = EeReport.where(approval_flg: 1)
   end
 
   def search
@@ -19,7 +19,7 @@ class EeReportSearchsController < ApplicationController
     if params[:search][:street_address].present?
       @ee_reports = @ee_reports.where("street_address like '%" + params[:search][:street_address] + "%' ")    
     end
-    @ee_reports = @ee_reports.page(params[:page]).per(PER)
+    @ee_reports = @ee_reports
     render :index
   end
 

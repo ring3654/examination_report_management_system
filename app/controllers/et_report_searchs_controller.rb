@@ -5,7 +5,7 @@ class EtReportSearchsController < ApplicationController
 
 
   def index
-    @et_reports = EtReport.where(approval_flg: 1).page(params[:page]).per(PER)
+    @et_reports = EtReport.where(approval_flg: 1)
   end
 
 
@@ -23,7 +23,7 @@ class EtReportSearchsController < ApplicationController
     if params[:search][:street_address].present?
       @et_reports = @et_reports.where("street_address like '%" + params[:search][:street_address] + "%' ")    
     end
-    @et_reports = @et_reports.page(params[:page]).per(PER)
+    @et_reports = @et_reports
     render :index
   end
 

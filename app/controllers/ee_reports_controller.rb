@@ -7,7 +7,7 @@ class EeReportsController < ApplicationController
   # GET /ee_reports
   # GET /ee_reports.json
   def index
-    @ee_reports = EeReport.all.page(params[:page]).per(PER)
+    @ee_reports = EeReport.all
   end
 
   # GET /ee_reports/1
@@ -176,9 +176,6 @@ class EeReportsController < ApplicationController
   end
   
   def approval
-    logger.debug("-----------------")
-    logger.debug(params)
-    logger.debug("-----------------") 
     ee_report = EeReport.find(params[:approval_id])
     ee_report.update(approval_flg: 1)
     redirect_to unapproved_reports_index_path, notice: "承認しました。" 

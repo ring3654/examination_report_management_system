@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.where(flg: 0).order(:user_id).page(params[:page]).per(PER)
+    @users = User.where(flg: 0).order(:user_id)
     @name = ""
     @annual = ""
   end
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
 
   def search
-    @users = User.all.order(:user_id).page(params[:page]).per(PER)
+    @users = User.all.order(:user_id)
     if params[:search][:annual].present?
       @users = @users.where("annual like '%" + params[:search][:annual] + "%' ").order(:user_id)      
     end
