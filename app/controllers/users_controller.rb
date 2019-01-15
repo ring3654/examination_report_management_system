@@ -136,13 +136,10 @@ class UsersController < ApplicationController
       u_id = User.maximum(:id) + 1
       # windowsで作られたファイルに対応するので、encoding: "SJIS"を付けている
       CSV.foreach(params[:users_file].tempfile.path, headers: true, encoding: "SJIS") do |row|
-        User.create( user_id: "#{row["user_id"]}", name: "#{row["name"]}", password: "#{row["password"]}", flg: row["flg"] , annual: row["annual"], authority: row["authority"])
+        users << User.new( user_id: "#{row["user_id"]}", name: "#{row["name"]}", password: "#{row["password"]}", flg: row["flg"] , annual: row["annual"], authority: row["authority"])
       end
-        # logger.debug("==============================")
-        # logger.debug(users)
-        # logger.debug("==============================")
       # importメソッドでバルクインサートできる
-      # ::User.import(users)
+      ::User.import(users)
       # 何レコード登録できたかを返す
       ::User.count - current_user_count
     end
