@@ -42,7 +42,6 @@
         <td><%= check_box_tag "deletes[#{ user.id }]", user.id %></td>
       </tr>
     <% end %>
-    <%= paginate @users %>
   </tbody>
 </table>
 <%= submit_tag '一括削除', data: { confirm: "選択したユーザーを削除してもよろしいですか？"} %>
