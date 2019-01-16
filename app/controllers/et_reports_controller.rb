@@ -1,7 +1,7 @@
 class EtReportsController < ApplicationController
   before_action :set_et_report, only: [:show, :edit, :update, :destroy]
   before_action :login_check
-  before_action :before_controller_check
+  before_action :before_controller_check, only: [:show]
   # GET /et_reports
   # GET /et_reports.json
   def index
@@ -201,6 +201,12 @@ class EtReportsController < ApplicationController
       filename: "就職試験報告書_#{et_report.office_name}.pdf",
       type: "application/pdf"
       )
+  end
+
+  def approval
+    et_report = EtReport.find(params[:approval_id])
+    et_report.update(approval_flg: 1)
+    redirect_to unapproved_reports_index_path, notice: "承認しました。" 
   end
 
   private

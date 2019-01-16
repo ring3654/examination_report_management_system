@@ -23,7 +23,7 @@ class EtReportSearchsController < ApplicationController
     if params[:search][:street_address].present?
       @et_reports = @et_reports.where("street_address like '%" + params[:search][:street_address] + "%' ")    
     end
-    @et_reports = @et_reports
+    @et_reports = @et_reports.where(approval_flg: 1)
     render :index
   end
 
