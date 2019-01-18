@@ -17,7 +17,7 @@ class EeReportsController < ApplicationController
 
   # GET /ee_reports/new
   def new
-    @ee_report = EeReport.new
+    @ee_report = EeReport.new(student_id: session[:login_id])
   end
 
   # GET /ee_reports/1/edit
