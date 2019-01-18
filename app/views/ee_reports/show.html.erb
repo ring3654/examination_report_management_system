@@ -1,3 +1,4 @@
+<%= session[:login_id] %>
 <p id="notice"><%= notice %></p>
 <table width = "90%" border="1">
   <tr>
@@ -149,7 +150,7 @@
 </table>
 
 <% if @user_authority == 3 %>
-<%= link_to '編集', edit_ee_report_path(@ee_report) %> 
+  <%= link_to '編集', edit_ee_report_path(@ee_report) %> 
 <% end %>
 <div>
   <%= link_to '戻る', :back %>

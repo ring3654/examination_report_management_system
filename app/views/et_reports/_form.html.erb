@@ -31,7 +31,7 @@
 
   <div style="margin-right: 10px;">
   <div class="field">
-    受験者ID<%= form.text_field :student_id %>
+    受験者ID<%= form.text_field :student_id,readonly: true, class: 'readonly_text' %>
   </div>
   </div>
   </div>
@@ -280,8 +280,9 @@
     <%= form.text_area :other_coment, :size=>"60x10" %>
   </div>
 
-  <label><%= form.radio_button :approval_flg,"0", {:checked => true} %>未承認</label>
-
+  <div>
+  <%= form.hidden_field :approval_flg, :value => "0"  %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
