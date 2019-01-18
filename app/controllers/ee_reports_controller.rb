@@ -95,10 +95,10 @@ class EeReportsController < ApplicationController
     render :new
   end
   
-  def output
     # ThinreportsでPDFを作成
     # Editorで作ったtlfファイルを読み込む
-    # 1ページ目
+    #表面  
+  def output
     ee_report = EeReport.find(params[:output_id])
     report = Thinreports::Report.new(layout: "#{Rails.root}/app/views/ee_reports/入学試験受験報告書.tlf")
     report.start_new_page
@@ -114,7 +114,7 @@ class EeReportsController < ApplicationController
     report.page.item(:test_day).value(ee_report.test_day.strftime("%Y年%m月%d日") )
     report.page.item(:examination_hall).value(ee_report.examination_hall)
     report.page.item(:result_publication_date).value(ee_report.result_publication_date.strftime("%Y年%m月%d日") )
-     case ee_report.recommended_group 
+    case ee_report.recommended_group 
       when 1 then 
         recommend = "特別入試"
       when 2 then 
@@ -129,7 +129,7 @@ class EeReportsController < ApplicationController
         recommend = "自己推薦"
       when 7 then 
         recommend = "その他の推薦"
-     end 
+    end 
   
     report.page.item(:recommended_group).value(recommend)
     report.page.item(:t_subject_japanese).value(ee_report.t_subject_japanese)
@@ -142,20 +142,20 @@ class EeReportsController < ApplicationController
     report.page.item(:g_q_contents).value(ee_report.g_q_contents)
     report.page.item(:g_q_image).value("public/images/#{ee_report.g_q_image}")
     report.page.item(:g_impressions).value(ee_report.g_impressions)
-    # 3 ページ目
-    report.start_new_page layout: "#{Rails.root}/app/views/ee_reports/入学試験受験報告書_裏.tlf"
-     case ee_report.recommended_form 
+    #裏面
+  report.start_new_page layout: "#{Rails.root}/app/views/ee_reports/入学試験受験報告書_裏.tlf"
+    case ee_report.recommended_form 
       when 1 then 
-       recommended = "書類選考のみ"
+        recommended = "書類選考のみ"
       when 2 then 
-       recommended = "「書類選考」＋「面接」"
+        recommended = "「書類選考」＋「面接」"
       when 3 then 
-       recommended = "「書類選考」＋「面接」＋ 試験"
+        recommended = "「書類選考」＋「面接」＋ 試験"
       when 4 then
-       recommended = "「書類選考」＋「面接」＋ 小論文（作文）"
+        recommended = "「書類選考」＋「面接」＋ 小論文（作文）"
       when 5 then
-       recommended = "「書類選考」＋「面接」＋ 小論文（作文）＋ 試験"
-     end
+        recommended = "「書類選考」＋「面接」＋ 小論文（作文）＋ 試験"
+    end
   
     report.page.item(:recommended_form).value(recommended)
     report.page.item(:i_q_contents).value(ee_report.i_q_contents)
