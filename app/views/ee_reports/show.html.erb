@@ -150,11 +150,11 @@
 </table>
 
 <% if @user_authority == 3 %>
-<%= link_to '編集', edit_ee_report_path(@ee_report) %> 
+  <%= link_to '編集', edit_ee_report_path(@ee_report) %> 
 <% end %>
-<%= link_to '戻る', :back %>
-  <%= form_tag('/ee_reports/output') do %>
-    <%= submit_tag '印刷' %>
+  <%= link_to '戻る', :back %>
+    <%= form_tag('/ee_reports/output') do %>
+  <%= submit_tag '印刷' %>
     <%= hidden_field_tag "output_id", @ee_report.id %>
   <% end %>
 <% if @path[:controller] == "unapproved_reports" %>
