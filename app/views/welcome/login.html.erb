@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<head>
+<title>受検報告書管理システム</title>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<h3 style="text-align: right">受験報告書管理システム</h3>
+</head>
+
 <h1>ログイン</h1>
 
 
@@ -15,10 +25,10 @@
 
       <%= label_tag :ユーザID %>
       <%= text_field_tag "user_id", "", id: "user_id" %>
-
+      <br>
+      <br>
       <%= label_tag :パスワード %>
       <%= password_field_tag "password", "", id: "password" %>
-
       <%= submit_tag "ログイン" %>
     <% end %>
   </div>
