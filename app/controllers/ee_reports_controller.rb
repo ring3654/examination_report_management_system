@@ -175,6 +175,7 @@ class EeReportsController < ApplicationController
     )
   end
   
+  # 承認機能はこれ
   def approval
     ee_report = EeReport.find(params[:approval_id])
     ee_report.update(approval_flg: 1)

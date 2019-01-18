@@ -21,30 +21,29 @@
     <th width="35%">学校名・企業名</th>
     <th width="30%"></th>
     </tr>
-   </thead>
-  </table>
+  </thead>
+</table>
  
-  <table>
-
+<table>
   <tbody>
-      <% @ee_reports.each do |ee_report| %>
-        <tr>
+    <% @ee_reports.each do |ee_report| %>
+      <tr>
         <td width="35%"><%= ee_report.student_id %></td>
         <td width="35%"><%= ee_report.school_name %></td>
         <td width="15%"><%= link_to '閲覧', ee_report %></td>
         <td width="15%"><%= link_to '複写', copy_ee_report_path(ee_report) %></td>
-        </tr>
-      <% end %>
+      </tr>
+    <% end %>
 
-      <% @et_reports.each do |et_report| %>
-          <tr>
-          <td width="35%"><%= et_report.student_id %></td>
-          <td width="35%"><%= et_report.office_name %></td>
-          <td width="15%"><%= link_to '閲覧', et_report %></td>
-          <td width="15%"><%= link_to '複写', copy_et_report_path(et_report) %></td>
-          </tr>
-        <% end %>
-   </tbody>
-  </table>
- </div>
+    <% @et_reports.each do |et_report| %>
+      <tr>
+        <td width="35%"><%= et_report.student_id %></td>
+        <td width="35%"><%= et_report.office_name %></td>
+        <td width="15%"><%= link_to '閲覧', et_report %></td>
+        <td width="15%"><%= link_to '複写', copy_et_report_path(et_report) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
 <% end %>

@@ -10,6 +10,9 @@ class User < ApplicationRecord
       if name.blank?
         errors[:base] << '氏名は必ず入力してください'
       end
+      if authority.blank?
+        errors[:base] << '権限は必ず入力してください。'
+      end
     end
     has_secure_password     
 end
