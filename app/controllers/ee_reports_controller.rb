@@ -58,16 +58,25 @@ class EeReportsController < ApplicationController
       @ee_report.g_q_image = params[:ee_report][:g_q_image].original_filename
 
       File.open("public/images/#{@ee_report.g_q_image}",'wb') { |f|f.write(params[:ee_report][:g_q_image].read)}
-    end  
+    end 
+
+    if params[:ee_report][:g_q_image].present?
+      params[:ee_report][:g_q_image] = params[:ee_report][:g_q_image].original_filename
+    else
+      params[:ee_report][:g_q_image]  = ""
+    end
 
     if params[:ee_report][:i_q_images].present?
       @ee_report.i_q_images = params[:ee_report][:i_q_images].original_filename
   
       File.open("public/images/#{@ee_report.i_q_images}",'wb') { |f|f.write(params[:ee_report][:i_q_images].read)}
     end
-    params[:ee_report][:g_q_image] = params[:ee_report][:g_q_image].original_filename
-    params[:ee_report][:i_q_images] = params[:ee_report][:i_q_images].original_filename
     
+    if params[:ee_report][:i_q_images].present?
+      params[:ee_report][:i_q_images] = params[:ee_report][:i_q_image].original_filename
+    else
+      params[:ee_report][:i_q_images]  = ""
+    end
     respond_to do |format|
       if @ee_report.update(ee_report_params)
         format.html { redirect_to @ee_report, notice: 'Ee report was successfully updated.' }
