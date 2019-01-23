@@ -17,9 +17,11 @@ class WelcomeController < ApplicationController
           session[:login_id] = user.user_id
           session[:login_user] = user.name
           if user.authority == 1 or user.authority == 2
+            flash[:error] = ""
             redirect_to home_top_path
           else
-               redirect_to home_retrieval_top_path
+            flash[:error] = ""
+            redirect_to home_retrieval_top_path
           end
         else
           flash[:error] = "パスワードが正しくありません。"
