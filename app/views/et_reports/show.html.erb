@@ -164,7 +164,7 @@
     <td><%= @et_report.i_other %></td>
  </tr>
 
-  <td colspan="8"><%= @et_report.i_contents %><br><%= image_tag "/images/#{@et_report.i_image}",width: 400 %></td>
+  <td colspan="8"><%= @et_report.i_contents %> <br> <% if  @et_report.i_image.present? %>  <%= image_tag "/images/#{@et_report.i_image}",width: 400 %><% end %></td>
 </table>
 
 <table width = "90%" border = "1">
@@ -184,15 +184,8 @@
   <td>＊受験上参考になることがあれば記入してください。(失敗事例を含め)<br><%= @et_report.other_coment %></td>
 </table>
 
-<p>
-  <strong>承認フラグ:</strong>
-  <% case @et_report.approval_flg %>
-  <% when 0 then %>
-  未承認
-  <% when 1 then %>
-  承認済み
-  <% end %>
-</p>
+
+
 <% if @user_authority == 3 %>
   <%= link_to '編集', edit_ee_report_path(@ee_report) %> 
 <% end %>

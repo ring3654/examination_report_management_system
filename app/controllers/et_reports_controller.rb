@@ -56,7 +56,12 @@ class EtReportsController < ApplicationController
         File.open("public/images/#{@et_report.i_image}",'w+b') { |f|
         f.write(params[:et_report][:i_image].read)}
     end
-    params[:et_report][:i_image] = params[:et_report][:i_image].original_filename
+    
+    if params[:et_report][:i_image].present?
+      params[:et_report][:i_image] = params[:et_report][:i_image].original_filename
+    else
+      params[:et_report][:i_image]  = ""
+    end
 
     respond_to do |format|
       if @et_report.update(et_report_params)
