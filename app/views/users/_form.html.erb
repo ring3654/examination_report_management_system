@@ -28,15 +28,19 @@
     <%= form.password_field :password_confirmation %>
   </div>
 
-    <%= form.hidden_field :flg, :value => "0" %>
 
-   </div>
+  <div class="field">
+    <%= form.label :年度 %>
+    <%= form.text_field :annual %>
+  </div>
+
+    <%= form.hidden_field :flg, :value => "0" %>
 
   <div class="field">
     <%= form.label :権限 %>
   </div>
   <label><%= form.radio_button :authority, "1" %> 教員</label>
-  <label><%= form.radio_button :authority, "2", {:checked => true}  %> 生徒</label>
+  <label><%= form.radio_button :authority, "2" %> 生徒</label>
   <label><%= form.radio_button :authority, "3" %> 閲覧のみ</label>
   
 

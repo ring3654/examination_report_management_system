@@ -184,19 +184,24 @@
   <td>＊受験上参考になることがあれば記入してください。(失敗事例を含め)<br><%= @et_report.other_coment %></td>
 </table>
 
+
+
 <% if @user_authority == 3 %>
   <%= link_to '編集', edit_ee_report_path(@ee_report) %> 
 <% end %>
+<div>
+  <%= link_to '戻る', :back %> 
+</div><br>
 
-<br>
-<%= link_to '戻る', :back %> 
-<%= form_tag('/et_reports/output') do %>
-  <%= hidden_field_tag "output_id", @et_report.id %>
-  <br><%= submit_tag '印刷' %>
-<% end %>
+<div>
+  <%= form_tag('/et_reports/output') do %>
+    <%= hidden_field_tag "output_id", @et_report.id %>
+    <input type="submit" style="width:10%;padding:10px;font-size:20px;" value="印&emsp;&emsp;刷" >
+  <% end %>
+</div><br><br>
 <% if @path[:controller] == "unapproved_reports" %>
   <%= form_tag('/et_reports/approval') do %>
-    <%= submit_tag '承認' %>
+    <input type="submit" style="width:10%;padding:10px;font-size:20px;" value="承&emsp;&emsp;認" >
     <%= hidden_field_tag "approval_id", @et_report.id %>
   <% end %>
 <% end %>

@@ -152,14 +152,19 @@
 <% if @user_authority == 3 %>
   <%= link_to '編集', edit_ee_report_path(@ee_report) %> 
 <% end %>
+<div>
   <%= link_to '戻る', :back %>
-    <%= form_tag('/ee_reports/output') do %>
-  <%= submit_tag '印刷' %>
+</div>
+<br>
+<div>
+  <%= form_tag('/ee_reports/output') do %>
+    <input type="submit" style="width:10%;padding:10px;font-size:20px;" value="印&emsp;&emsp;刷" >
     <%= hidden_field_tag "output_id", @ee_report.id %>
   <% end %>
+</diV><br><br>
 <% if @path[:controller] == "unapproved_reports" %>
   <%= form_tag('/ee_reports/approval') do %>
-    <%= submit_tag '承認' %>
+    <input type="submit" style="width:10%;padding:10px;font-size:20px;" value="承&emsp;&emsp;認" >
     <%= hidden_field_tag "approval_id", @ee_report.id %>
   <% end %>
 <% end %>
