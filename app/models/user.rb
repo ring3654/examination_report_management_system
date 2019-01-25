@@ -5,7 +5,7 @@ class User < ApplicationRecord
     validate :error_check
     def error_check
       if user_id.blank?
-        errors[:base] << 'ユーザＩＤは必ず入力してください'
+        errors[:base] << 'ユーザーＩＤは必ず入力してください'
      end        
       if name.blank?
         errors[:base] << '氏名は必ず入力してください'
