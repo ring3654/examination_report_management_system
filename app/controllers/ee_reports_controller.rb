@@ -164,6 +164,8 @@ class EeReportsController < ApplicationController
         recommended = "「書類選考」＋「面接」＋ 小論文（作文）"
       when 5 then
         recommended = "「書類選考」＋「面接」＋ 小論文（作文）＋ 試験"
+      when 6 then
+        recommended = "その他"
     end
   
     report.page.item(:recommended_form).value(recommended)
