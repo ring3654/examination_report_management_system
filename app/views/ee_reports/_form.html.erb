@@ -1,7 +1,7 @@
 <%= form_with(model: ee_report, local: true) do |form| %>
   <% if ee_report.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(ee_report.errors.count, "error") %> prohibited this ee_report from being saved:</h2>
+      <h2><%= pluralize(ee_report.errors.count, "") %> つのエラーが発生しています。修正してください。</h2>
 
       <ul>
       <% ee_report.errors.full_messages.each do |message| %>
