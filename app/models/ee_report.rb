@@ -34,8 +34,8 @@ class EeReport < ApplicationRecord
         errors[:base] << '学校名は必ず入力してください'
       end            
 
-      if postal_code.blank? or street_address.blank?
-        errors[:base] << '郵便番号と所在地は必ず入力してください'
+      if street_address.blank?
+        errors[:base] << '所在地は必ず入力してください'
       end
 
       if examination_hall.blank?
