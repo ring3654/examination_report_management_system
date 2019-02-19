@@ -48,7 +48,7 @@
     <th>試験場</th>
       <td colspan="4"><%= @et_report.examination_hall %></td>
     <th>受験者数</th>
-      <td colspan="2">男<%= @et_report.examinees_count_man %>人 女<%= @et_report.examinees_count_woman %>人　計<%= "#{@et_report.examinees_count_man + @et_report.examinees_count_woman}" %>人</td> 
+      <td colspan="2">男<%= @et_report.examinees_count_man %>人 女<%= @et_report.examinees_count_woman %>人 計<%= "#{@et_report.examinees_count_man + @et_report.examinees_count_woman}" %>人</td> 
   </tr>
 </table>
 
@@ -190,7 +190,7 @@
   <%= link_to '編集', edit_ee_report_path(@ee_report) %> 
 <% end %>
 <div>
-  <%= link_to '戻る', :back %> 
+  <%= link_to '戻る', home_top_path %> 
 </div><br>
 
 <div>

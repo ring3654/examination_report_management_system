@@ -91,6 +91,17 @@ class EtReportsController < ApplicationController
     end
 
   def output
+    if params[:et_report][:i_image].present?
+      @et_report.i_image = params[:et_report][:i_image].original_filename
+      
+      File.open("public/images/#{@et_report.i_image}",'w+b') { |f|
+      f.write(params[:et_report][:i_image].read)}
+  end
+      if params[:et_report][:i_image].present?
+        params[:et_report][:i_image] = params[:et_report][:i_image].original_filename
+        else
+        params[:et_report][:i_image]  = ""
+      end
     et_report = EtReport.find(params[:output_id])
     # ThinreportsでPDFを作成
     # Editorで作ったtlfファイルを読み込む
